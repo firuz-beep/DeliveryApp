@@ -5,8 +5,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput } from "react-native";
 
 const Stack = createStackNavigator();
-
 const THEME_COLOR = "#2081D0";
+
+var email = "elonmusk@gmail.com";
+var password = "I_own_Tesla_:P";
 
 const App = () => {
     return (
@@ -159,15 +161,15 @@ const HomeScreen = ({ navigation }) => {
 		<View style={styles.centerxy}>
 			<Image blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
 			<Text>Email</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com'></TextInput>
+			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
 			<Text>Password</Text>
-			<TextInput style={styles.inputtext}></TextInput>
+			<TextInput secureTextEntry={true} style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
 			<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DeliveryManHome", { name: "Jane" })} /></View>
 		</View>
 	);
 };
 
-const DeliveryManHomeScreen = () => {
+const DeliveryManHomeScreen = ({ navigation }) => {
 	 return (
         <View>
 			<View>
@@ -175,7 +177,8 @@ const DeliveryManHomeScreen = () => {
 					<Image blurRadius={0} style={styles.mainpp} source={require("./assets/profile.png")}></Image>
                 </View>
                 <View style={styles.listtext, styles.margin}>
-                    <Text style={styles.h1}>Hey, man</Text>
+					<Text style={styles.h1}>email: {email}</Text>
+                    <Text style={styles.h1}>password: {password}</Text>
                 </View>
             </View>
 			<View style={styles.listline} />
