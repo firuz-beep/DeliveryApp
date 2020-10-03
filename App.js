@@ -131,6 +131,11 @@ const styles = StyleSheet.create({
 	h2: {
 		fontSize: 20,
 		marginBottom: '5%'
+	},
+	
+	button: {
+		width: 250,
+		justifyContent: 'center'
 	}
 });
 
@@ -139,7 +144,7 @@ const HomeScreen = ({ navigation }) => {
         <View>
 			<View>
                 <View style={styles.centerxy}>
-                    <Image style={styles.mainpp} source={{ uri: "http://loremflickr.com/g/50/50/paris" }} />
+					<Image blurRadius={0} style={styles.mainpp} source={require("./assets/profile.png")}></Image>
                 </View>
                 <View style={styles.listtext, styles.margin}>
                     <Text style={styles.h1}>Hey, man</Text>
@@ -147,7 +152,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.listtext}>
+                <View style={styles.button}>
                     <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
@@ -156,7 +161,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.listtext}>
+                <View style={styles.button}>
                     <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
@@ -165,7 +170,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.listtext}>
+                <View style={styles.button}>
                     <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
@@ -174,7 +179,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.listtext}>
+                <View style={styles.button}>
                     <Button title="Get Help" onPress={() => navigation.navigate("Help", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
