@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 const THEME_COLOR = "#2081D0";
 
 var email = "elonmusk@gmail.com";
-var password = "I_own_Tesla_:P";
+var password = "IownTesla";
 
 const App = () => {
     return (
@@ -17,67 +17,87 @@ const App = () => {
                 <Stack.Screen
                     name="Home"
                     component={HomeScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
 				<Stack.Screen
-                    name="DeliveryManHome"
-                    component={DeliveryManHomeScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    name="DMHome"
+                    component={DMHomeScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false, headerLeft: null }}
                 />
                 <Stack.Screen
                     name="EditProfile"
                     component={EditProfileScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="Register"
                     component={RegisterScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="Login"
                     component={LoginScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="ChangePassword"
                     component={ChangePasswordScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="PastDeliveries"
                     component={PastDeliveriesScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="PastDelivery"
                     component={PastDeliveryScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="PlaceOrder"
                     component={PlaceOrderScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="OrderPlaced"
                     component={OrderPlacedScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="ConfirmOrder"
                     component={ConfirmOrderScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="OrderConfirmed"
                     component={OrderConfirmedScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
                     name="Help"
                     component={HelpScreen}
-                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="CRegister"
+                    component={CRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="ECRegister"
+                    component={ECRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="DMCRegister"
+                    component={DMCRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="RegisterSuccess"
+                    component={RegisterSuccessScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false, headerLeft: null }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
@@ -88,61 +108,76 @@ const styles = StyleSheet.create({
 	
 	centerxy: {
 		justifyContent: "center",
-		alignItems: 'center'
+		alignItems: 'center',
+	},
+	
+	centerallxy: {
+		justifyContent: "center",
+		alignItems: 'center',
+		flex: 1,
+	},
+	
+	RegisterSuccess: {
+		justifyContent: "center",
+		alignItems: "center",
+		flex: 1,
+		backgroundColor: THEME_COLOR,
 	},
 	
 	margin: {
-		marginLeft: '5%'
+		marginLeft: '5%',
 	},
 	
 	listline: {
 		backgroundColor: '#DEDEDE',
 		height: 5,
 		marginTop: '2%',
-		marginBottom: '2%'
+		marginBottom: '2%',
 	},
 	
 	icon: {
 		width: 50,
 		height: 50,
-		marginRight: '15%'
+		marginRight: '15%',
 	},
 	
 	listitems: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		marginLeft: '3%'
+		marginLeft: '3%',
 	},
 	
 	listtext: {
 		alignItems: 'flex-start',
-		justifyContent: 'center'
+		justifyContent: 'center',
 	},
 	
 	listicon: {
-		alignItems: 'flex-end'
+		alignItems: 'flex-end',
 	},
 	
 	mainpp: {
 		width: 250,
 		height: 250,
 		marginTop: '10%',
-		marginBottom: '10%'
+		marginBottom: '10%',
 	},
 	
 	h1: {
 		fontSize: 25,
-		marginBottom: '5%'
+		marginBottom: '5%',
 	},
 	
 	h2: {
 		fontSize: 20,
-		marginBottom: '5%'
+		marginBottom: '5%',
 	},
 	
 	button: {
 		width: 250,
-		justifyContent: 'center'
+		justifyContent: 'center',
+		padding: 5,
+		margin: 5,
 	},
 	
 	inputtext: {
@@ -151,25 +186,26 @@ const styles = StyleSheet.create({
 		padding: 5,
 		margin: 5,
 		width: 250,
-		borderRadius: 10
+		borderRadius: 10,
 	}
 	
 });
 
 const HomeScreen = ({ navigation }) => {
 	return (
-		<View style={styles.centerxy}>
-			<Image blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+		<View style={styles.centerallxy}>
+			<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
 			<Text>Email</Text>
 			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
 			<Text>Password</Text>
-			<TextInput secureTextEntry={true} style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
-			<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DeliveryManHome", { name: "Jane" })} /></View>
+			<TextInput secureTextEntry={true} placeholder='e.g. IownTesla' style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
+			<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DMHome", { name: "Jane" })} /></View>
+			<Text style={{color: '#666666'}} numberOfLines={2} onPress={() => navigation.navigate("Register", { name: "Jane" })}>{"\n"}Click Here to Create a New Account</Text>
 		</View>
 	);
 };
 
-const DeliveryManHomeScreen = ({ navigation }) => {
+const DMHomeScreen = ({ navigation }) => {
 	 return (
         <View>
 			<View>
@@ -177,8 +213,9 @@ const DeliveryManHomeScreen = ({ navigation }) => {
 					<Image blurRadius={0} style={styles.mainpp} source={require("./assets/profile.png")}></Image>
                 </View>
                 <View style={styles.listtext, styles.margin}>
-					<Text style={styles.h1}>email: {email}</Text>
-                    <Text style={styles.h1}>password: {password}</Text>
+					<Text style={styles.h1}>Hey, Delivery Man</Text>
+					<Text style={{fontSize: 6}}>email passing test: {email}</Text>
+                    <Text style={{fontSize: 6}}>password passing test: {password}</Text>
                 </View>
             </View>
 			<View style={styles.listline} />
@@ -222,48 +259,93 @@ const DeliveryManHomeScreen = ({ navigation }) => {
     );
 };
 
-const EditProfileScreen = () => {
+const EditProfileScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
+    	return (
+		<View style={styles.centerallxy}>
+			<Text>Select Account Type</Text>
+			<View style={styles.button}><Button title="Customer" onPress={() => navigation.navigate("CRegister", { name: "Jane" })} /></View>
+			<View style={styles.button}><Button title="E-Commerce Platform" onPress={() => navigation.navigate("ECRegister", { name: "Jane" })} /></View>
+			<View style={styles.button}><Button title="Delivery Men Company" onPress={() => navigation.navigate("DMCRegister", { name: "Jane" })} /></View>
+		</View>
+	);
+};
+
+const LoginScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const LoginScreen = () => {
+const ChangePasswordScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const ChangePasswordScreen = () => {
+const PastDeliveriesScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const PastDeliveriesScreen = () => {
+const PastDeliveryScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const PastDeliveryScreen = () => {
+const PlaceOrderScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const PlaceOrderScreen = () => {
+const OrderPlacedScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const OrderPlacedScreen = () => {
+const ConfirmOrderScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const ConfirmOrderScreen = () => {
+const OrderConfirmedScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const OrderConfirmedScreen = () => {
+const HelpScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const HelpScreen = () => {
+const CRegisterScreen = ({ navigation }) => {
+	return (
+		<View style={styles.centerallxy}>
+			<Text>Fill in the following details:{"\n"}</Text>
+			<Text>E-mail</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
+			<Text>Password</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. IownTesla' onChangeText={(val) => email = val}></TextInput>
+			<Text>Full Name</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. Elon Musk' onChangeText={(val) => email = val}></TextInput>
+			<Text>Address</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. 3500 Deer Creek Road Palo Alto, CA 94304' onChangeText={(val) => email = val}></TextInput>
+			<Text>Contact Number</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. 8006627232' onChangeText={(val) => email = val}></TextInput>
+			
+			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
+		</View>
+	);
+};
+
+const ECRegisterScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
+};
+
+const DMCRegisterScreen = ({ navigation }) => {
+    return <Text>This is Janes profile</Text>;
+};
+
+const RegisterSuccessScreen = ({ navigation }) => {
+    	return (
+		<View style={styles.RegisterSuccess}>
+			<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+			<Text style={{color: "#FFFFFF"}}>Your Account Has Been Registered Successfully{"\n"}</Text>
+			<Button title="Return To Login Screen" onPress={() => navigation.navigate("Home", { name: "Jane" })} />
+		</View>
+	);
 };
 
 export default App;
