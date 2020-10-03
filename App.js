@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text } from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput } from "react-native";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +15,11 @@ const App = () => {
                 <Stack.Screen
                     name="Home"
                     component={HomeScreen}
+                    options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="DeliveryManHome"
+                    component={DeliveryManHomeScreen}
                     options={{ title: "Delivery App", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
@@ -136,11 +141,34 @@ const styles = StyleSheet.create({
 	button: {
 		width: 250,
 		justifyContent: 'center'
+	},
+	
+	inputtext: {
+		borderWidth: 1,
+		borderColor: THEME_COLOR,
+		padding: 5,
+		margin: 5,
+		width: 250,
+		borderRadius: 10
 	}
+	
 });
 
 const HomeScreen = ({ navigation }) => {
-    return (
+	return (
+		<View style={styles.centerxy}>
+			<Image blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+			<Text>Email</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com'></TextInput>
+			<Text>Password</Text>
+			<TextInput style={styles.inputtext}></TextInput>
+			<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DeliveryManHome", { name: "Jane" })} /></View>
+		</View>
+	);
+};
+
+const DeliveryManHomeScreen = () => {
+	 return (
         <View>
 			<View>
                 <View style={styles.centerxy}>
@@ -192,47 +220,47 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const EditProfileScreen = () => {
-    return <Text>This is Janile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const RegisterScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const LoginScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const ChangePasswordScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const PastDeliveriesScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const PastDeliveryScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const PlaceOrderScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const OrderPlacedScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const ConfirmOrderScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const OrderConfirmedScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 const HelpScreen = () => {
-    return <Text>This is Jane's profile</Text>;
+    return <Text>This is Janes profile</Text>;
 };
 
 export default App;
