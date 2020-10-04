@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput } from "react-native";
+import { Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput } from "react-native";
 
 const Stack = createStackNavigator();
 const THEME_COLOR = "#2081D0";
@@ -10,6 +10,8 @@ const THEME_COLOR = "#2081D0";
 var email = "elonmusk@gmail.com";
 var password = "IownTesla";
 var registeryinput = "registeryinput";
+var editinput = "editinput";
+var {height, width} = Dimensions.get('window');
 
 const App = () => {
     return (
@@ -136,10 +138,17 @@ const styles = StyleSheet.create({
 		marginBottom: '2%',
 	},
 	
-	icon: {
+	mediumicon: {
+		width: 120,
+		height: 120,
+		marginTop: '10%',
+		marginBottom: '5%'
+	},
+	
+	smallicon: {
 		width: 50,
 		height: 50,
-		marginRight: '15%',
+		marginRight: '15%'
 	},
 	
 	listitems: {
@@ -182,94 +191,138 @@ const styles = StyleSheet.create({
 	},
 	
 	inputtext: {
-		borderWidth: 1,
+		borderBottomWidth: 1,
 		borderColor: THEME_COLOR,
 		padding: 5,
 		margin: 5,
-		width: 250,
+		width: '90%',
 		borderRadius: 10,
 	}
-	
 });
  
 const HomeScreen = ({ navigation }) => {
 	return (
-		<View style={styles.centerallxy}>
-			<Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
-			<Text>Email</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
-			<Text>Password</Text>
-			<TextInput secureTextEntry={true} placeholder='e.g. IownTesla' style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
-			<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DMHome", { name: "Jane" })} /></View>
-			<Text style={{color: THEME_COLOR}} numberOfLines={2} onPress={() => navigation.navigate("Register", { name: "Jane" })}>{"\n"}Click Here to Create a New Account</Text>
-		</View>
+		<ScrollView>
+			<View style={styles.centerallxy}>
+				<Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+				<Text>Email</Text>
+				<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
+				<Text>Password</Text>
+				<TextInput secureTextEntry={true} placeholder='e.g. IownTesla' style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
+				<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DMHome")} /></View>
+				<Text style={{color: THEME_COLOR}} numberOfLines={2} onPress={() => navigation.navigate("Register")}>{"\n"}Click Here to Create a New Account</Text>
+			</View>
+		</ScrollView>
 	);
 };
 
 const DMHomeScreen = ({ navigation }) => {
 	 return (
-        <View>
+        <ScrollView>
 			<View>
                 <View style={styles.centerxy}>
-					<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/profile.png")}></Image>
+                    <Image style={styles.mainpp} source={require('./assets/profile.png')} />
                 </View>
                 <View style={styles.listtext, styles.margin}>
-					<Text style={styles.h1}>Hey, Delivery Man</Text>
+                    <Text style={styles.h1}>Hey, man</Text>
                 </View>
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.button}>
-                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile", { name: "Jane" })} />
+                <View style={styles.listtext}>
+                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={require('./assets/edit.png')} />
+                    <Image style={styles.smallicon} source={require('./assets/edit.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.button}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries", { name: "Jane" })} />
+                <View style={styles.listtext}>
+                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={require('./assets/pastdelivery.png')} />
+                    <Image style={styles.smallicon} source={require('./assets/parcel.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.button}>
-                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced", { name: "Jane" })} />
+                <View style={styles.listtext}>
+                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={require('./assets/currentdelivery.png')} />
+                    <Image style={styles.smallicon} source={require('./assets/location.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
             <View style={styles.listitems}>
-                <View style={styles.button}>
-                    <Button title="Get Help" onPress={() => navigation.navigate("Help", { name: "Jane" })} />
+                <View style={styles.listtext}>
+                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={require('./assets/help.png')} />
+                    <Image style={styles.smallicon} source={require('./assets/help.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
-        </View>
+        </ScrollView>
     );
 };
 
 const EditProfileScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+	return (
+        <ScrollView>
+			<View>
+                <View style={styles.centerxy}>
+                    <Image style={styles.mediumicon} source={require('./assets/profile.png')} />
+                </View>
+                <View style={ styles.centerxy}>
+                    <Text style={styles.h2}>Man</Text>
+                </View>
+            </View>
+			<View style={styles.listitems}>
+				<View style={styles.listtext}>
+					<Text style={styles.lighttextcolor}>Name</Text>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<TextInput style={styles.inputtext} placeholder='batman' onChangeText={(val) => editinput = val}></TextInput>
+				</View>
+			</View>
+			<View style={styles.listitems}>
+				<View style={styles.listtext}>
+					<Text style={styles.lighttextcolor}>Mobile Number</Text>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<TextInput style={styles.inputtext} placeholder='0168412679' onChangeText={(val) => editinput = val}></TextInput>
+				</View>
+			</View>
+			<View style={styles.listitems}>
+				<View style={styles.listtext}>
+					<Text style={styles.lighttextcolor}>Email Address</Text>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<TextInput style={styles.inputtext} placeholder='elonmusk@gmail.com' onChangeText={(val) => editinput = val}></TextInput>
+				</View>
+			</View>
+        </ScrollView>
+	);
 };
 
 const RegisterScreen = ({ navigation }) => {
-    	return (
-		<View style={styles.centerallxy}>
-			<Text>Select Account Type</Text>
-			<View style={styles.button}><Button title="Customer" onPress={() => navigation.navigate("CRegister", { name: "Jane" })} /></View>
-			<View style={styles.button}><Button title="E-Commerce Platform" onPress={() => navigation.navigate("ECRegister", { name: "Jane" })} /></View>
-			<View style={styles.button}><Button title="Delivery Men Company" onPress={() => navigation.navigate("DMCRegister", { name: "Jane" })} /></View>
-		</View>
+    return (
+		<ScrollView>
+			<View style={styles.centerallxy}>
+				<Text>Select Account Type</Text>
+				<View style={styles.button}><Button title="Customer" onPress={() => navigation.navigate("CRegister")} /></View>
+				<View style={styles.button}><Button title="E-Commerce Platform" onPress={() => navigation.navigate("ECRegister")} /></View>
+				<View style={styles.button}><Button title="Delivery Men Company" onPress={() => navigation.navigate("DMCRegister")} /></View>
+			</View>
+		</ScrollView>
 	);
 };
 
@@ -324,7 +377,7 @@ const CRegisterScreen = ({ navigation }) => {
 			<Text>Contact Number</Text>
 			<TextInput style={styles.inputtext} placeholder='e.g. 8006627232' onChangeText={(val) => registeryinput = val}></TextInput>
 			
-			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
+			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} /></View>
 		</View>
 	);
 };
@@ -342,7 +395,7 @@ const ECRegisterScreen = ({ navigation }) => {
 			<Text>Contact Number</Text>
 			<TextInput style={styles.inputtext} placeholder='e.g. 082246503' onChangeText={(val) => registeryinput = val}></TextInput>
 			
-			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
+			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} /></View>
 		</View>
 	);
 };
@@ -362,7 +415,7 @@ const DMCRegisterScreen = ({ navigation }) => {
 			<Text>Bank Account Number</Text>
 			<TextInput style={styles.inputtext} placeholder='e.g. 99135123908712312' onChangeText={(val) => registeryinput = val}></TextInput>
 			
-			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
+			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} /></View>
 		</View>
 	);
 };
@@ -372,7 +425,7 @@ const RegisterSuccessScreen = ({ navigation }) => {
 		<View style={styles.RegisterSuccess}>
 			<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/approval.png")}></Image>
 			<Text style={{color: "#FFFFFF"}}>Your Account Has Been Registered Successfully{"\n"}</Text>
-			<Button title="Return To Login Screen" onPress={() => navigation.navigate("Home", { name: "Jane" })} />
+			<Button title="Return To Login Screen" onPress={() => navigation.navigate("Home")} />
 		</View>
 	);
 };
