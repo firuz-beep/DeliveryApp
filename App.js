@@ -9,6 +9,7 @@ const THEME_COLOR = "#2081D0";
 
 var email = "elonmusk@gmail.com";
 var password = "IownTesla";
+var registeryinput = "registeryinput";
 
 const App = () => {
     return (
@@ -190,17 +191,17 @@ const styles = StyleSheet.create({
 	}
 	
 });
-
+ 
 const HomeScreen = ({ navigation }) => {
 	return (
 		<View style={styles.centerallxy}>
-			<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+			<Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
 			<Text>Email</Text>
 			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
 			<Text>Password</Text>
 			<TextInput secureTextEntry={true} placeholder='e.g. IownTesla' style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
 			<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DMHome", { name: "Jane" })} /></View>
-			<Text style={{color: '#666666'}} numberOfLines={2} onPress={() => navigation.navigate("Register", { name: "Jane" })}>{"\n"}Click Here to Create a New Account</Text>
+			<Text style={{color: THEME_COLOR}} numberOfLines={2} onPress={() => navigation.navigate("Register", { name: "Jane" })}>{"\n"}Click Here to Create a New Account</Text>
 		</View>
 	);
 };
@@ -210,12 +211,10 @@ const DMHomeScreen = ({ navigation }) => {
         <View>
 			<View>
                 <View style={styles.centerxy}>
-					<Image blurRadius={0} style={styles.mainpp} source={require("./assets/profile.png")}></Image>
+					<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/profile.png")}></Image>
                 </View>
                 <View style={styles.listtext, styles.margin}>
 					<Text style={styles.h1}>Hey, Delivery Man</Text>
-					<Text style={{fontSize: 6}}>email passing test: {email}</Text>
-                    <Text style={{fontSize: 6}}>password passing test: {password}</Text>
                 </View>
             </View>
 			<View style={styles.listline} />
@@ -224,7 +223,7 @@ const DMHomeScreen = ({ navigation }) => {
                     <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={require('./assets/parcel.png')} />
+                    <Image style={styles.icon} source={require('./assets/edit.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
@@ -233,7 +232,7 @@ const DMHomeScreen = ({ navigation }) => {
                     <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={{ uri: "http://loremflickr.com/g/50/50/paris" }} />
+                    <Image style={styles.icon} source={require('./assets/pastdelivery.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
@@ -242,7 +241,7 @@ const DMHomeScreen = ({ navigation }) => {
                     <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={{ uri: "http://loremflickr.com/g/50/50/paris" }} />
+                    <Image style={styles.icon} source={require('./assets/currentdelivery.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
@@ -251,7 +250,7 @@ const DMHomeScreen = ({ navigation }) => {
                     <Button title="Get Help" onPress={() => navigation.navigate("Help", { name: "Jane" })} />
                 </View>
                 <View style={styles.listicon}>
-                    <Image style={styles.icon} source={{ uri: "http://loremflickr.com/g/50/50/paris" }} />
+                    <Image style={styles.icon} source={require('./assets/help.png')} />
                 </View>
             </View>
 			<View style={styles.listline} />
@@ -315,15 +314,15 @@ const CRegisterScreen = ({ navigation }) => {
 		<View style={styles.centerallxy}>
 			<Text>Fill in the following details:{"\n"}</Text>
 			<Text>E-mail</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
+			<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => registeryinput = val}></TextInput>
 			<Text>Password</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. IownTesla' onChangeText={(val) => email = val}></TextInput>
+			<TextInput style={styles.inputtext} placeholder='e.g. IownTesla' onChangeText={(val) => registeryinput = val}></TextInput>
 			<Text>Full Name</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. Elon Musk' onChangeText={(val) => email = val}></TextInput>
+			<TextInput style={styles.inputtext} placeholder='e.g. Elon Musk' onChangeText={(val) => registeryinput = val}></TextInput>
 			<Text>Address</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. 3500 Deer Creek Road Palo Alto, CA 94304' onChangeText={(val) => email = val}></TextInput>
+			<TextInput style={styles.inputtext} placeholder='e.g. 3500 Deer Creek Road Palo Alto, CA 94304' onChangeText={(val) => registeryinput = val}></TextInput>
 			<Text>Contact Number</Text>
-			<TextInput style={styles.inputtext} placeholder='e.g. 8006627232' onChangeText={(val) => email = val}></TextInput>
+			<TextInput style={styles.inputtext} placeholder='e.g. 8006627232' onChangeText={(val) => registeryinput = val}></TextInput>
 			
 			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
 		</View>
@@ -331,17 +330,47 @@ const CRegisterScreen = ({ navigation }) => {
 };
 
 const ECRegisterScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+    	return (
+		<View style={styles.centerallxy}>
+			<Text>Fill in the following details:{"\n"}</Text>
+			<Text>E-mail</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. pcimage@gmail.com' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Password</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. ilovecomputers' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Company Name</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. PC Image' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Contact Number</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. 082246503' onChangeText={(val) => registeryinput = val}></TextInput>
+			
+			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
+		</View>
+	);
 };
 
 const DMCRegisterScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+    	return (
+		<View style={styles.centerallxy}>
+			<Text>Fill in the following details:{"\n"}</Text>
+			<Text>E-mail</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. qqrunners@gmail.com' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Password</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. iprovidedeliverymen' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Full Name</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. Quentin Quantavius' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Contact Number</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. 090078601' onChangeText={(val) => registeryinput = val}></TextInput>
+			<Text>Bank Account Number</Text>
+			<TextInput style={styles.inputtext} placeholder='e.g. 99135123908712312' onChangeText={(val) => registeryinput = val}></TextInput>
+			
+			<View style={styles.button}><Button title="Register" onPress={() => navigation.navigate("RegisterSuccess", { name: "Jane" })} /></View>
+		</View>
+	);
 };
 
 const RegisterSuccessScreen = ({ navigation }) => {
     	return (
 		<View style={styles.RegisterSuccess}>
-			<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+			<Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/approval.png")}></Image>
 			<Text style={{color: "#FFFFFF"}}>Your Account Has Been Registered Successfully{"\n"}</Text>
 			<Button title="Return To Login Screen" onPress={() => navigation.navigate("Home", { name: "Jane" })} />
 		</View>
