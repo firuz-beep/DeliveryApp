@@ -17,6 +17,7 @@ const App = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
+			{/* add headerleft : null back in after prototyping is done */}
                 <Stack.Screen
                     name="Home"
                     component={HomeScreen}
@@ -25,11 +26,16 @@ const App = () => {
 				<Stack.Screen
                     name="DMHome"
                     component={DMHomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false, headerLeft: null }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false}}
                 />
                 <Stack.Screen
                     name="EditProfile"
                     component={EditProfileScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
+                    name="EditPassword"
+                    component={EditPasswordScreen}
                     options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
@@ -100,7 +106,7 @@ const App = () => {
 				<Stack.Screen
                     name="RegisterSuccess"
                     component={RegisterSuccessScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false, headerLeft: null }}
+                    options={{ title: "Delivery App", headerTitleAlign: 'center', headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
@@ -129,6 +135,20 @@ const styles = StyleSheet.create({
 	
 	margin: {
 		marginLeft: '5%',
+	},
+	
+	margintop: {
+		marginTop: '5%'
+	},
+	
+	listonlymargintop: {
+		marginTop: '10%',
+		marginLeft: '3%'
+	},
+	
+	listonlymargin: {
+		marginTop: '5%',
+		marginLeft: '3%'
 	},
 	
 	listline: {
@@ -190,6 +210,11 @@ const styles = StyleSheet.create({
 		margin: 5,
 	},
 	
+	buttonleft: {
+		alignItems: 'flex-start',
+		marginLeft: '4%'
+	},
+	
 	inputtext: {
 		borderBottomWidth: 1,
 		borderColor: THEME_COLOR,
@@ -205,9 +230,9 @@ const HomeScreen = ({ navigation }) => {
 		<ScrollView>
 			<View style={styles.centerallxy}>
 				<Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
-				<Text>Email</Text>
+				<Text style={styles.margintop}>Email</Text>
 				<TextInput style={styles.inputtext} placeholder='e.g. elonmusk@gmail.com' onChangeText={(val) => email = val}></TextInput>
-				<Text>Password</Text>
+				<Text style={styles.margintop}>Password</Text>
 				<TextInput secureTextEntry={true} placeholder='e.g. IownTesla' style={styles.inputtext} onChangeText={(val) => password = val}></TextInput>
 				<View style={styles.button}><Button title="Login" onPress={() => navigation.navigate("DMHome")} /></View>
 				<Text style={{color: THEME_COLOR}} numberOfLines={2} onPress={() => navigation.navigate("Register")}>{"\n"}Click Here to Create a New Account</Text>
@@ -275,13 +300,13 @@ const EditProfileScreen = ({ navigation }) => {
                 <View style={styles.centerxy}>
                     <Image style={styles.mediumicon} source={require('./assets/profile.png')} />
                 </View>
-                <View style={ styles.centerxy}>
+                <View style={styles.centerxy}>
                     <Text style={styles.h2}>Man</Text>
                 </View>
             </View>
 			<View style={styles.listitems}>
-				<View style={styles.listtext}>
-					<Text style={styles.lighttextcolor}>Name</Text>
+				<View style={styles.listtext, styles.listonlymargin}>
+					<Text style={styles.lighttextcolor, styles.texttoinputs}>Name</Text>
 				</View>
 			</View>
 			<View>
@@ -290,8 +315,8 @@ const EditProfileScreen = ({ navigation }) => {
 				</View>
 			</View>
 			<View style={styles.listitems}>
-				<View style={styles.listtext}>
-					<Text style={styles.lighttextcolor}>Mobile Number</Text>
+				<View style={styles.listtext, styles.listonlymargin}>
+					<Text style={styles.lighttextcolor, styles.texttoinputs}>Mobile Number</Text>
 				</View>
 			</View>
 			<View>
@@ -300,8 +325,8 @@ const EditProfileScreen = ({ navigation }) => {
 				</View>
 			</View>
 			<View style={styles.listitems}>
-				<View style={styles.listtext}>
-					<Text style={styles.lighttextcolor}>Email Address</Text>
+				<View style={styles.listtext, styles.listonlymargin}>
+					<Text style={styles.lighttextcolor, styles.texttoinputs}>Email Address</Text>
 				</View>
 			</View>
 			<View>
@@ -309,7 +334,59 @@ const EditProfileScreen = ({ navigation }) => {
 					<TextInput style={styles.inputtext} placeholder='elonmusk@gmail.com' onChangeText={(val) => editinput = val}></TextInput>
 				</View>
 			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<View style={styles.button}><Button title="Change Password" onPress={() => navigation.navigate("EditPassword")} /></View>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<View style={styles.button}><Button title="Log Out" onPress={() => navigation.navigate("Home")} /></View>
+				</View>
+			</View>
         </ScrollView>
+	);
+};
+
+const EditPasswordScreen = ({ navigation }) => {
+	return (
+		<ScrollView>
+			<View style={styles.listitems}>
+				<View style={styles.listtext, styles.listonlymargintop}>
+					<Text style={styles.lighttextcolor}>Old Password</Text>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<TextInput style={styles.inputtext} placeholder='Your old password' onChangeText={(val) => editinput = val}></TextInput>
+				</View>
+			</View>
+			<View style={styles.listitems}>
+				<View style={styles.listtext, styles.listonlymargin}>
+					<Text style={styles.lighttextcolor}>New Password</Text>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<TextInput style={styles.inputtext} placeholder='Your new password' onChangeText={(val) => editinput = val}></TextInput>
+				</View>
+			</View>
+			<View style={styles.listitems}>
+				<View style={styles.listtext, styles.listonlymargin}>
+					<Text style={styles.lighttextcolor}>Confirm New Password</Text>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<TextInput style={styles.inputtext} placeholder='Confirm your new password' onChangeText={(val) => editinput = val}></TextInput>
+				</View>
+			</View>
+			<View>
+				<View style={styles.centerallxy}>
+					<View style={styles.button}><Button title="Save Changes" onPress={() => navigation.navigate("DMHome")} /></View>
+				</View>
+			</View>
+		</ScrollView>
 	);
 };
 
