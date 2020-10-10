@@ -19,6 +19,11 @@ const App = () => {
             <Stack.Navigator>
                 {/* add headerleft : null back in after prototyping is done */}
                 <Stack.Screen
+                    name="User"
+                    component={UserScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
                     name="Home"
                     component={HomeScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
@@ -58,7 +63,6 @@ const App = () => {
                     component={ChangePasswordScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
-                <Stack.Screen name="PastDeliveriesList" component={PastDeliveriesList} />
                 <Stack.Screen
                     name="PastDeliveries"
                     component={PastDeliveriesScreen}
@@ -237,6 +241,10 @@ const styles = StyleSheet.create({
         padding: 5,
         margin: 5,
     },
+	
+	buttontext: {
+		color: 'white'
+	},
 
     buttonleft: {
         alignItems: "flex-start",
@@ -252,6 +260,17 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
 });
+
+const UserScreen = ({ navigation }) => {
+	return (
+	<ScrollView>
+		<Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CHome")} />
+		<Button style={styles.button} title="Deliverymen" onPress={() => navigation.navigate("DMHome")} />
+		<Button style={styles.button} title="Delivery Service Provider" onPress={() => navigation.navigate("DMHome")} />
+		<Button style={styles.button} title="Company" onPress={() => navigation.navigate("DMHome")} />
+		</ScrollView>
+	);
+};
 
 const HomeScreen = ({ navigation }) => {
     return (
@@ -336,7 +355,7 @@ const CHomeScreen = ({ navigation }) => {
                     <Image style={styles.mainpp} source={require("./assets/profile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>Hey, Deliveryman</Text>
+                    <Text style={styles.h1}>Hey, customer name...</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -511,12 +530,10 @@ const ChangePasswordScreen = ({ navigation }) => {
 };
 
 const PastDeliveriesScreen = ({ navigation }) => {
-    return PastDeliveriesList({ navigation });
+    return PastDeliveriesList({ navigation }),PastDeliveriesList({ navigation }),PastDeliveriesList({ navigation });
 };
 
-{
-    /* To Firuz: pass order history here */
-}
+{/* To Firuz: pass order history here */}
 const PastDeliveriesList = ({ navigation }) => {
     return (
         <ScrollView>
