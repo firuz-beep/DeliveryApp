@@ -24,11 +24,6 @@ const App = () => {
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
-                    name="Home"
-                    component={HomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
                     name="DMHome"
                     component={DMHomeScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
@@ -277,7 +272,7 @@ const UserScreen = ({ navigation }) => {
 	);
 };
 
-const HomeScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
@@ -286,8 +281,9 @@ const HomeScreen = ({ navigation }) => {
                 <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
                 <Text style={styles.margintop}>Password</Text>
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
-                <View style={styles.button}>
-                    <Button title="Login" onPress={() => navigation.navigate("DMHome")} />
+								
+				<View style={styles.button}>
+                    <Button title="Login" onPress={LoginUser} />
                 </View>
                 <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("Register")}>
                     {"\n"}Click Here to Create a New Account
@@ -296,6 +292,30 @@ const HomeScreen = ({ navigation }) => {
         </ScrollView>
     );
 };
+
+	const LoginUser = ({ navigation }) => {
+		if (email == "customer")
+		{
+			navigation.navigate("CHome");
+		}
+		else if (email == "deliveryman")
+		{
+			navigation.navigate("DMHome");
+		}
+		else if (email == "deliverymencompany")
+		{
+			navigation.navigate("DMCHome");
+		}
+		else if (email == "ecommercecompany")
+		{
+			navigation.navigate("MHome");
+		}
+		else
+		{
+			console.log("Have You Recevied The Message?");		
+		}
+	};
+
 
 {
     /* To Shaheem: you can change the list to match deliverymen */
@@ -443,7 +463,7 @@ const MHomeScreen = ({ navigation }) => {
             <View>
                 <View style={styles.centerallxy}>
                     <View style={styles.button}>
-                        <Button title="Log Out" onPress={() => navigation.navigate("Home")} />
+                        <Button title="Log Out" onPress={() => navigation.navigate("Login")} />
                     </View>
                 </View>
             </View>
@@ -502,7 +522,7 @@ const EditProfileScreen = ({ navigation }) => {
             <View>
                 <View style={styles.centerallxy}>
                     <View style={styles.button}>
-                        <Button title="Log Out" onPress={() => navigation.navigate("Home")} />
+                        <Button title="Log Out" onPress={() => navigation.navigate("Login")} />
                     </View>
                 </View>
             </View>
@@ -571,10 +591,6 @@ const RegisterScreen = ({ navigation }) => {
             </View>
         </ScrollView>
     );
-};
-
-const LoginScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
 };
 
 const ChangePasswordScreen = ({ navigation }) => {
@@ -735,7 +751,7 @@ const RegisterSuccessScreen = ({ navigation }) => {
         <View style={styles.RegisterSuccess}>
             <Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/approval.png")}></Image>
             <Text style={{ color: "#FFFFFF" }}>Your Account Has Been Registered Successfully{"\n"}</Text>
-            <Button title="Return To Login Screen" onPress={() => navigation.navigate("Home")} />
+            <Button title="Return To Login Screen" onPress={() => navigation.navigate("Login")} />
         </View>
     );
 };
