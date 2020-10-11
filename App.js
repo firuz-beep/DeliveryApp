@@ -39,6 +39,11 @@ const App = () => {
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
+                    name="MHome"
+                    component={MHomeScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
                     name="EditProfile"
                     component={EditProfileScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
@@ -267,7 +272,7 @@ const UserScreen = ({ navigation }) => {
 		<Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CHome")} />
 		<Button style={styles.button} title="Deliverymen" onPress={() => navigation.navigate("DMHome")} />
 		<Button style={styles.button} title="Delivery Service Provider" onPress={() => navigation.navigate("DMHome")} />
-		<Button style={styles.button} title="Company" onPress={() => navigation.navigate("DMHome")} />
+		<Button style={styles.button} title="Company" onPress={() => navigation.navigate("MHome")} />
 		</ScrollView>
 	);
 };
@@ -395,6 +400,53 @@ const CHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
+        </ScrollView>
+    );
+};
+
+const MHomeScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View>
+                <View style={styles.listtext, styles.listonlymargintop}>
+                    <Text style={styles.h1}>Company name...</Text>
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="View Past Orders" onPress={() => navigation.navigate("PastDeliveries")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/pastorder.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="View Current Order" onPress={() => navigation.navigate("PastDeliveries")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/currentorder.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="Register Complaint" onPress={() => navigation.navigate("HelpScreen")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/complaint.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View>
+                <View style={styles.centerallxy}>
+                    <View style={styles.button}>
+                        <Button title="Log Out" onPress={() => navigation.navigate("Home")} />
+                    </View>
+                </View>
+            </View>
         </ScrollView>
     );
 };
