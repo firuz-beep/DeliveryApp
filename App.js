@@ -254,6 +254,41 @@ const styles = StyleSheet.create({
         marginTop: "10%",
         marginBottom: "10%",
     },
+	
+	aprofileimage: {
+		width: 283,
+        height: 250,
+        marginTop: "10%",
+        marginBottom: "10%",
+	},
+	
+	cprofileimage: {
+		width: 250,
+        height: 250,
+        marginTop: "10%",
+        marginBottom: "10%",
+	},
+	
+	dmprofileimage: {
+		width: 309,
+        height: 250,
+        marginTop: "10%",
+        marginBottom: "10%",
+	},
+	
+	dmcprofileimage: {
+		width: 250,
+        height: 250,
+        marginTop: "10%",
+        marginBottom: "10%",
+	},
+	
+	eccprofileimage: {
+		width: 291,
+        height: 250,
+        marginTop: "10%",
+        marginBottom: "10%",
+	},
 
     h1: {
         fontSize: 25,
@@ -307,12 +342,11 @@ const ALoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
-                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")}></Image>
                 <Text style={styles.margintop}>Email</Text>
                 <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
                 <Text style={styles.margintop}>Password</Text>
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
-								
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("AHome")} />
                 </View>
@@ -325,12 +359,11 @@ const CLoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
-                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")}></Image>
                 <Text style={styles.margintop}>Email</Text>
                 <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
                 <Text style={styles.margintop}>Password</Text>
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
-								
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("CHome")} />
                 </View>
@@ -346,12 +379,11 @@ const DMLoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
-                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")}></Image>
                 <Text style={styles.margintop}>Email</Text>
                 <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
                 <Text style={styles.margintop}>Password</Text>
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
-								
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("DMHome")} />
                 </View>
@@ -367,12 +399,11 @@ const DMCLoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
-                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")}></Image>
                 <Text style={styles.margintop}>Email</Text>
                 <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
                 <Text style={styles.margintop}>Password</Text>
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
-								
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("DMCHome")} />
                 </View>
@@ -388,12 +419,11 @@ const ECCLoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
-                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")}></Image>
                 <Text style={styles.margintop}>Email</Text>
                 <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
                 <Text style={styles.margintop}>Password</Text>
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
-								
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("ECCHome")} />
                 </View>
@@ -492,7 +522,7 @@ const AHomeScreen = ({ navigation }) => {
         <ScrollView>
             <View>
                 <View style={styles.centerxy}>
-                    <Image style={styles.mainpp} source={require("./assets/profile.png")} />
+                    <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
                     <Text style={styles.h1}>Hey, Admin</Text>
@@ -544,7 +574,7 @@ const CHomeScreen = ({ navigation }) => {
         <ScrollView>
             <View>
                 <View style={styles.centerxy}>
-                    <Image style={styles.mainpp} source={require("./assets/profile.png")} />
+                    <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
                     <Text style={styles.h1}>Hey, customer name...</Text>
@@ -596,7 +626,7 @@ const DMHomeScreen = ({ navigation }) => {
         <ScrollView>
             <View>
                 <View style={styles.centerxy}>
-                    <Image style={styles.mainpp} source={require("./assets/profile.png")} />
+                    <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
                     <Text style={styles.h1}>Hey, Deliveryman</Text>
@@ -648,7 +678,7 @@ const DMCHomeScreen = ({ navigation }) => {
         <ScrollView>
             <View>
                 <View style={styles.centerxy}>
-                    <Image style={styles.mainpp} source={require("./assets/profile.png")} />
+                    <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
                     <Text style={styles.h1}>Hey, Delivery Men Company</Text>
@@ -699,8 +729,11 @@ const ECCHomeScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View>
-                <View style={styles.listtext, styles.listonlymargintop}>
-                    <Text style={styles.h1}>E-Commerce Company name...</Text>
+                <View style={styles.centerxy}>
+                    <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")} />
+                </View>
+                <View style={(styles.listtext, styles.margin)}>
+                    <Text style={styles.h1}>E-Commerce Company Name</Text>
                 </View>
             </View>
             <View style={styles.listline} />
