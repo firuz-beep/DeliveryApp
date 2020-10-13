@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput } from "react-native";
+import { Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground } from "react-native";
 
 const Stack = createStackNavigator();
 const THEME_COLOR = "#2081D0";
@@ -196,15 +196,8 @@ const styles = StyleSheet.create({
     },
 
     listline: {
-        backgroundColor: "#DEDEDE",
-        height: 5,
-        marginTop: "2%",
-        marginBottom: "2%",
-    },
-	
-	listlineblue: {
         backgroundColor: THEME_COLOR,
-        height: 5,
+        height: 1,
         marginTop: "2%",
         marginBottom: "2%",
     },
@@ -365,17 +358,19 @@ const styles = StyleSheet.create({
 
 const LoginSelectionScreen = ({ navigation }) => {
 	return (
-	<ScrollView>
-		<View style={styles.centerallxy}>
-			<Image style={styles.logoimage} source={require("./assets/logo.png")}></Image>
-			<Text style={styles.h3}>Select a User Type</Text>
-			<Text>{"\n"}</Text>
-			<View style={styles.button}><Button style={styles.button} title="Admin" onPress={() => navigation.navigate("ALogin")} /></View>
-			<View style={styles.button}><Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CLogin")} /></View>
-			<View style={styles.button}><Button style={styles.button} title="Delivery Man" onPress={() => navigation.navigate("DMLogin")} /></View>
-			<View style={styles.button}><Button style={styles.button} title="Delivery Men Company" onPress={() => navigation.navigate("DMCLogin")} /></View>
-			<View style={styles.button}><Button style={styles.button} title="E-Commerce Company" onPress={() => navigation.navigate("ECCLogin")} /></View>
-		</View>
+	<ScrollView>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+			<View style={styles.centerallxy}>
+				<Image style={styles.logoimage} source={require("./assets/logo.png")}></Image>
+				<Text style={styles.h3}>Select a User Type</Text>
+				<Text>{"\n"}</Text>
+				<View style={styles.button}><Button style={styles.button} title="Admin" onPress={() => navigation.navigate("ALogin")} /></View>
+				<View style={styles.button}><Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CLogin")} /></View>
+				<View style={styles.button}><Button style={styles.button} title="Delivery Man" onPress={() => navigation.navigate("DMLogin")} /></View>
+				<View style={styles.button}><Button style={styles.button} title="Delivery Men Company" onPress={() => navigation.navigate("DMCLogin")} /></View>
+				<View style={styles.button}><Button style={styles.button} title="E-Commerce Company" onPress={() => navigation.navigate("ECCLogin")} /></View>
+			</View>
+		</ImageBackground>
 	</ScrollView>
 	);
 };
@@ -555,7 +550,7 @@ const RegisterSuccessScreen = ({ navigation }) => {
         <View style={styles.RegisterSuccess}>
             <Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/approval.png")}></Image>
             <Text style={{ color: "#FFFFFF" }}>Your Account Has Been Registered Successfully{"\n"}</Text>
-            <Button title="Return To Login Screen" onPress={() => navigation.navigate("Login")} />
+            <Button title="Return To Login Screen" onPress={() => navigation.navigate("LoginSelection")} />
         </View>
     );
 };
@@ -568,7 +563,7 @@ const AHomeScreen = ({ navigation }) => {
                     <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>Hey, Admin</Text>
+                    <Text style={styles.h3}>Hey, Admin</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -620,7 +615,7 @@ const CHomeScreen = ({ navigation }) => {
                     <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>Hey, customer name...</Text>
+                    <Text style={styles.h3}>Hey, customer name...</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -672,7 +667,7 @@ const DMHomeScreen = ({ navigation }) => {
                     <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>Hey, Deliveryman</Text>
+                    <Text style={styles.h3}>Hey, Deliveryman</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -724,7 +719,7 @@ const DMCHomeScreen = ({ navigation }) => {
                     <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>Hey, Delivery Men Company</Text>
+                    <Text style={styles.h3}>Hey, Delivery Men Company</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -776,7 +771,7 @@ const ECCHomeScreen = ({ navigation }) => {
                     <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>E-Commerce Company Name</Text>
+                    <Text style={styles.h3}>E-Commerce Company Name</Text>
                 </View>
             </View>
             <View style={styles.listline} />
