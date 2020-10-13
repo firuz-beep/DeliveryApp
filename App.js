@@ -201,6 +201,13 @@ const styles = StyleSheet.create({
         marginTop: "2%",
         marginBottom: "2%",
     },
+	
+	listlineblue: {
+        backgroundColor: THEME_COLOR,
+        height: 5,
+        marginTop: "2%",
+        marginBottom: "2%",
+    },
 
     mediumicon: {
         width: 120,
@@ -256,38 +263,63 @@ const styles = StyleSheet.create({
     },
 	
 	aprofileimage: {
-		width: 283,
+		width: 355,
         height: 250,
         marginTop: "10%",
         marginBottom: "10%",
+		borderWidth: 2,
+		borderColor: THEME_COLOR,
+		borderRadius: 5,
 	},
 	
 	cprofileimage: {
-		width: 250,
+		width: 361,
         height: 250,
         marginTop: "10%",
         marginBottom: "10%",
+		borderWidth: 2,
+		borderColor: THEME_COLOR,
+		borderRadius: 5,
 	},
 	
 	dmprofileimage: {
-		width: 309,
+		width: 336,
         height: 250,
         marginTop: "10%",
         marginBottom: "10%",
+		borderWidth: 2,
+		borderColor: THEME_COLOR,
+		borderRadius: 5,
 	},
 	
 	dmcprofileimage: {
-		width: 250,
+		width: 392,
         height: 250,
         marginTop: "10%",
         marginBottom: "10%",
+		borderWidth: 2,
+		borderColor: THEME_COLOR,
+		borderRadius: 5,
 	},
 	
 	eccprofileimage: {
-		width: 291,
+		width: 350,
         height: 250,
         marginTop: "10%",
         marginBottom: "10%",
+		borderWidth: 2,
+		borderColor: THEME_COLOR,
+		borderRadius: 5,
+	},
+	
+	logoimage: {
+		width: 399,
+        height: 225,
+        marginTop: "10%",
+        marginBottom: "10%",
+		borderWidth: 2,
+		borderColor: THEME_COLOR,
+		borderRadius: 5,
 	},
 
     h1: {
@@ -299,6 +331,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: "5%",
     },
+	
+	h3: {
+		color: THEME_COLOR,
+        fontSize: 25,
+	},
 
     button: {
         width: 250,
@@ -329,11 +366,16 @@ const styles = StyleSheet.create({
 const LoginSelectionScreen = ({ navigation }) => {
 	return (
 	<ScrollView>
-		<Button style={styles.button} title="Admin" onPress={() => navigation.navigate("ALogin")} />
-		<Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CLogin")} />
-		<Button style={styles.button} title="Delivery Man" onPress={() => navigation.navigate("DMLogin")} />
-		<Button style={styles.button} title="Delivery Men Company" onPress={() => navigation.navigate("DMCLogin")} />
-		<Button style={styles.button} title="E-Commerce Company" onPress={() => navigation.navigate("ECCLogin")} />
+		<View style={styles.centerallxy}>
+			<Image style={styles.logoimage} source={require("./assets/logo.png")}></Image>
+			<Text style={styles.h3}>Select a User Type</Text>
+			<Text>{"\n"}</Text>
+			<View style={styles.button}><Button style={styles.button} title="Admin" onPress={() => navigation.navigate("ALogin")} /></View>
+			<View style={styles.button}><Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CLogin")} /></View>
+			<View style={styles.button}><Button style={styles.button} title="Delivery Man" onPress={() => navigation.navigate("DMLogin")} /></View>
+			<View style={styles.button}><Button style={styles.button} title="Delivery Men Company" onPress={() => navigation.navigate("DMCLogin")} /></View>
+			<View style={styles.button}><Button style={styles.button} title="E-Commerce Company" onPress={() => navigation.navigate("ECCLogin")} /></View>
+		</View>
 	</ScrollView>
 	);
 };
@@ -343,10 +385,11 @@ const ALoginScreen = ({ navigation }) => {
         <ScrollView>
             <View style={styles.centerallxy}>
                 <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")}></Image>
-                <Text style={styles.margintop}>Email</Text>
-                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
-                <Text style={styles.margintop}>Password</Text>
-                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text style={styles.h3}>Admin Login</Text>
+				<Text>{"\n"}</Text>
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (email = val)}></TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text>{"\n"}</Text>
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("AHome")} />
                 </View>
@@ -360,16 +403,16 @@ const CLoginScreen = ({ navigation }) => {
         <ScrollView>
             <View style={styles.centerallxy}>
                 <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")}></Image>
-                <Text style={styles.margintop}>Email</Text>
-                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
-                <Text style={styles.margintop}>Password</Text>
-                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text style={styles.h3}>Customer Login</Text>
+				<Text>{"\n"}</Text>
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (email = val)}></TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text>{"\n"}</Text>
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("CHome")} />
                 </View>
-                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("CRegister")}>
-                    {"\n"}Click Here to Create a New Account
-                </Text>
+				<Text>{"\n"}</Text>
+                <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("CRegister")}>Click Here to Create a New Account</Text>
             </View>
         </ScrollView>
     );
@@ -380,16 +423,16 @@ const DMLoginScreen = ({ navigation }) => {
         <ScrollView>
             <View style={styles.centerallxy}>
                 <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")}></Image>
-                <Text style={styles.margintop}>Email</Text>
-                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
-                <Text style={styles.margintop}>Password</Text>
-                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text style={styles.h3}>Delivery Man Login</Text>
+				<Text>{"\n"}</Text>
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (email = val)}></TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text>{"\n"}</Text>
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("DMHome")} />
                 </View>
-                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("DMRegister")}>
-                    {"\n"}Click Here to Create a New Account
-                </Text>
+				<Text>{"\n"}</Text>
+                <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("DMRegister")}>Click Here to Create a New Account</Text>
             </View>
         </ScrollView>
     );
@@ -400,16 +443,16 @@ const DMCLoginScreen = ({ navigation }) => {
         <ScrollView>
             <View style={styles.centerallxy}>
                 <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")}></Image>
-                <Text style={styles.margintop}>Email</Text>
-                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
-                <Text style={styles.margintop}>Password</Text>
-                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text style={styles.h3}>Delivery Men Company Login</Text>
+				<Text>{"\n"}</Text>
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (email = val)}></TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text>{"\n"}</Text>
 				<View style={styles.button}>
                     <Button title="Login" onPress={() => navigation.navigate("DMCHome")} />
                 </View>
-                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("DMCRegister")}>
-                    {"\n"}Click Here to Create a New Account
-                </Text>
+				<Text>{"\n"}</Text>
+                <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("DMCRegister")}>Click Here to Create a New Account</Text>
             </View>
         </ScrollView>
     );
@@ -420,16 +463,16 @@ const ECCLoginScreen = ({ navigation }) => {
         <ScrollView>
             <View style={styles.centerallxy}>
                 <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")}></Image>
-                <Text style={styles.margintop}>Email</Text>
-                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
-                <Text style={styles.margintop}>Password</Text>
-                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text style={styles.h3}>E-Commerce Company Login</Text>
+				<Text>{"\n"}</Text>
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (email = val)}></TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+				<Text>{"\n"}</Text>
 				<View style={styles.button}>
-                    <Button title="Login" onPress={() => navigation.navigate("ECCHome")} />
+                    <Button title="Login" onPress={() => navigation.navigate("AHome")} />
                 </View>
-                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("ECCRegister")}>
-                    {"\n"}Click Here to Create a New Account
-                </Text>
+				<Text>{"\n"}</Text>
+                <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("ECCRegister")}>Click Here to Create a New Account</Text>
             </View>
         </ScrollView>
     );
