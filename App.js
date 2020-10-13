@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground } from "react-native";
+import { Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground, TouchableOpacity } from "react-native";
 
 const Stack = createStackNavigator();
 const THEME_COLOR = "#2081D0";
@@ -196,8 +196,15 @@ const styles = StyleSheet.create({
     },
 
     listline: {
+        backgroundColor: "#CDCDCD",
+        height: 3,
+        marginTop: "2%",
+        marginBottom: "2%",
+    },
+	
+	listlineblue: {
         backgroundColor: THEME_COLOR,
-        height: 1,
+        height: 3,
         marginTop: "2%",
         marginBottom: "2%",
     },
@@ -212,7 +219,7 @@ const styles = StyleSheet.create({
     smallicon: {
         width: 50,
         height: 50,
-        marginRight: "15%",
+        marginRight: 15,
     },
 
     listitems: {
@@ -354,11 +361,31 @@ const styles = StyleSheet.create({
         width: "90%",
         borderRadius: 10,
     },
+	
+	buttonfont: {
+		color: "#FFFFFF",
+        fontSize: 15,
+		textTransform: "uppercase",
+		paddingLeft: 15,
+		paddingTop: 15,
+	},
+	
+	buttonview: {
+		borderRadius: 10,
+		marginLeft: 10,
+		marginRight: 10,
+		marginTop: 5,
+		marginBottom: 5,
+		padding: 10,
+		backgroundColor: THEME_COLOR,
+		flexDirection: "row",
+		justifyContent: "space-between"
+	},
 });
 
 const LoginSelectionScreen = ({ navigation }) => {
 	return (
-	<ScrollView>	
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
 		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
 			<View style={styles.centerallxy}>
 				<Image style={styles.logoimage} source={require("./assets/logo.png")}></Image>
@@ -377,7 +404,8 @@ const LoginSelectionScreen = ({ navigation }) => {
 
 const ALoginScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.centerallxy}>
                 <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")}></Image>
 				<Text style={styles.h3}>Admin Login</Text>
@@ -389,13 +417,15 @@ const ALoginScreen = ({ navigation }) => {
                     <Button title="Login" onPress={() => navigation.navigate("AHome")} />
                 </View>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const CLoginScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.centerallxy}>
                 <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")}></Image>
 				<Text style={styles.h3}>Customer Login</Text>
@@ -409,13 +439,15 @@ const CLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("CRegister")}>Click Here to Create a New Account</Text>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const DMLoginScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.centerallxy}>
                 <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")}></Image>
 				<Text style={styles.h3}>Delivery Man Login</Text>
@@ -429,13 +461,15 @@ const DMLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("DMRegister")}>Click Here to Create a New Account</Text>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const DMCLoginScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.centerallxy}>
                 <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")}></Image>
 				<Text style={styles.h3}>Delivery Men Company Login</Text>
@@ -449,13 +483,15 @@ const DMCLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("DMCRegister")}>Click Here to Create a New Account</Text>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const ECCLoginScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.centerallxy}>
                 <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")}></Image>
 				<Text style={styles.h3}>E-Commerce Company Login</Text>
@@ -464,34 +500,37 @@ const ECCLoginScreen = ({ navigation }) => {
                 <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
 				<Text>{"\n"}</Text>
 				<View style={styles.button}>
-                    <Button title="Login" onPress={() => navigation.navigate("AHome")} />
+                    <Button title="Login" onPress={() => navigation.navigate("ECCHome")} />
                 </View>
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("ECCRegister")}>Click Here to Create a New Account</Text>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const CRegisterScreen = ({ navigation }) => {
     return (
-        <View style={styles.centerallxy}>
-            <Text>Fill in the following details:{"\n"}</Text>
-            <Text>E-mail</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Password</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. IownTesla" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Full Name</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. Elon Musk" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Address</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 3500 Deer Creek Road Palo Alto, CA 94304" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Contact Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 8006627232" onChangeText={(val) => (registeryinput = val)}></TextInput>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+            <View style={styles.centerallxy}>
+                <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")}></Image>
+				<Text style={styles.h3}>Customer Registeration</Text>
+			
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Password" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Full Name" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Address" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Contact Number" onChangeText={(val) => (registeryinput = val)}></TextInput>
 
-            <View style={styles.button}>
-                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
-            </View>
-        </View>
+				<View style={styles.button}>
+					<Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
+				</View>
+			
+			</View>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
@@ -505,43 +544,48 @@ const DMRegisterScreen = ({ navigation }) => {
 
 const DMCRegisterScreen = ({ navigation }) => {
     return (
-        <View style={styles.centerallxy}>
-            <Text>Fill in the following details:{"\n"}</Text>
-            <Text>E-mail</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. qqrunners@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Password</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. iprovidedeliverymen" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Full Name</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. Quentin Quantavius" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Contact Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 090078601" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Bank Account Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 99135123908712312" onChangeText={(val) => (registeryinput = val)}></TextInput>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+            <View style={styles.centerallxy}>
+                <Image style={styles.cprofileimage} source={require("./assets/dmcprofile.png")}></Image>
+				<Text style={styles.h3}>Customer Registeration</Text>
+			
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Password" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Full Name" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Contact Number" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Bank Account Number" onChangeText={(val) => (registeryinput = val)}></TextInput>
 
-            <View style={styles.button}>
-                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
-            </View>
-        </View>
+				<View style={styles.button}>
+					<Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
+				</View>
+			
+			</View>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const ECCRegisterScreen = ({ navigation }) => {
     return (
-        <View style={styles.centerallxy}>
-            <Text>Fill in the following details:{"\n"}</Text>
-            <Text>E-mail</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. pcimage@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Password</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. ilovecomputers" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Company Name</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. PC Image" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Contact Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 082246503" onChangeText={(val) => (registeryinput = val)}></TextInput>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+            <View style={styles.centerallxy}>
+                <Image style={styles.cprofileimage} source={require("./assets/eccprofile.png")}></Image>
+				<Text style={styles.h3}>Customer Registeration</Text>
+			
+				<TextInput style={styles.inputtext} placeholder="Email" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Password" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Company Name" onChangeText={(val) => (registeryinput = val)}></TextInput>
+				<TextInput style={styles.inputtext} placeholder="Contact Number" onChangeText={(val) => (registeryinput = val)}></TextInput>
 
-            <View style={styles.button}>
-                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
-            </View>
-        </View>
+				<View style={styles.button}>
+					<Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
+				</View>
+			
+			</View>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
@@ -557,7 +601,8 @@ const RegisterSuccessScreen = ({ navigation }) => {
 
 const AHomeScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")} />
@@ -566,50 +611,45 @@ const AHomeScreen = ({ navigation }) => {
                     <Text style={styles.h3}>Hey, Admin</Text>
                 </View>
             </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/edit.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
-                </View>
-                <View style={styles.listiconright}>
+			
+            <View style={styles.listlineblue} />
+			
+			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+                <Text style={styles.buttonfont}>View All Orders</Text>
+				<View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
                 </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
+			</TouchableOpacity>
+			
+			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+                <Text style={styles.buttonfont}>View Delivery Men Companies</Text>
+				<View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/delivery.png")} />
                 </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/location.png")} />
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+                <Text style={styles.buttonfont}>View E-Commerce Companies</Text>
+				<View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/eccicon.png")} />
                 </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
+			</TouchableOpacity>
+			
+			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+                <Text style={styles.buttonfont}>Payments</Text>
+				<View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/payments.png")} />
                 </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/help.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-        </ScrollView>
+			</TouchableOpacity>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const CHomeScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")} />
@@ -655,13 +695,15 @@ const CHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const DMHomeScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")} />
@@ -707,13 +749,15 @@ const DMHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const DMCHomeScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")} />
@@ -759,13 +803,15 @@ const DMCHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const ECCHomeScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")} />
@@ -809,13 +855,15 @@ const ECCHomeScreen = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const EditProfileScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.mediumicon} source={require("./assets/profile.png")} />
@@ -868,13 +916,15 @@ const EditProfileScreen = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const EditPasswordScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.listitems}>
                 <View style={(styles.listtext, styles.listonlymargintop)}>
                     <Text style={styles.lighttextcolor}>Old Password</Text>
@@ -912,7 +962,8 @@ const EditPasswordScreen = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
@@ -927,7 +978,8 @@ const PastDeliveriesScreen = ({ navigation }) => {
 {/* To Firuz: pass order history here */}
 const PastDeliveriesList = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View style={styles.listitemsonly}>
                 <View style={styles.listitems}>
                     <View style={styles.listitemscolumn}>
@@ -944,13 +996,15 @@ const PastDeliveriesList = ({ navigation }) => {
                 </View>
                 <View style={styles.listline} />
             </View>
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
 const PastDeliveryScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.mainpp} source={require("./assets/delivered.png")} />
@@ -981,7 +1035,8 @@ const PastDeliveryScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-        </ScrollView>
+		</ImageBackground>
+	</ScrollView>
     );
 };
 
