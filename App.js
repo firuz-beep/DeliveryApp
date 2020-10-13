@@ -19,13 +19,38 @@ const App = () => {
             <Stack.Navigator>
                 {/* add headerleft : null back in after prototyping is done */}
                 <Stack.Screen
-                    name="User"
-                    component={UserScreen}
+                    name="LoginSelection"
+                    component={LoginSelectionScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
-                <Stack.Screen
-                    name="DMHome"
-                    component={DMHomeScreen}
+				<Stack.Screen
+                    name="ALogin"
+                    component={ALoginScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="CLogin"
+                    component={CLoginScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="DMLogin"
+                    component={DMLoginScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="DMCLogin"
+                    component={DMCLoginScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="ECCLogin"
+                    component={ECCLoginScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="AHome"
+                    component={AHomeScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
@@ -34,8 +59,43 @@ const App = () => {
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
-                    name="MHome"
-                    component={MHomeScreen}
+                    name="DMHome"
+                    component={DMHomeScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
+                    name="DMCHome"
+                    component={DMCHomeScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="ECCHome"
+                    component={ECCHomeScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
+                    name="CRegister"
+                    component={CRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
+                    name="DMRegister"
+                    component={DMRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="DMCRegister"
+                    component={DMCRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+				<Stack.Screen
+                    name="ECCRegister"
+                    component={ECCRegisterScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                />
+                <Stack.Screen
+                    name="RegisterSuccess"
+                    component={RegisterSuccessScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
@@ -46,16 +106,6 @@ const App = () => {
                 <Stack.Screen
                     name="EditPassword"
                     component={EditPasswordScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
-                    name="Register"
-                    component={RegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
-                    name="Login"
-                    component={LoginScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
@@ -96,26 +146,6 @@ const App = () => {
                 <Stack.Screen
                     name="Help"
                     component={HelpScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
-                    name="CRegister"
-                    component={CRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
-                    name="ECRegister"
-                    component={ECRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
-                    name="DMCRegister"
-                    component={DMCRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
-                />
-                <Stack.Screen
-                    name="RegisterSuccess"
-                    component={RegisterSuccessScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
             </Stack.Navigator>
@@ -261,18 +291,19 @@ const styles = StyleSheet.create({
     },
 });
 
-const UserScreen = ({ navigation }) => {
+const LoginSelectionScreen = ({ navigation }) => {
 	return (
 	<ScrollView>
-		<Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CHome")} />
-		<Button style={styles.button} title="Deliverymen" onPress={() => navigation.navigate("DMHome")} />
-		<Button style={styles.button} title="Delivery Service Provider" onPress={() => navigation.navigate("DMHome")} />
-		<Button style={styles.button} title="Company" onPress={() => navigation.navigate("MHome")} />
-		</ScrollView>
+		<Button style={styles.button} title="Admin" onPress={() => navigation.navigate("ALogin")} />
+		<Button style={styles.button} title="Customer" onPress={() => navigation.navigate("CLogin")} />
+		<Button style={styles.button} title="Delivery Man" onPress={() => navigation.navigate("DMLogin")} />
+		<Button style={styles.button} title="Delivery Men Company" onPress={() => navigation.navigate("DMCLogin")} />
+		<Button style={styles.button} title="E-Commerce Company" onPress={() => navigation.navigate("ECCLogin")} />
+	</ScrollView>
 	);
 };
 
-const LoginScreen = ({ navigation }) => {
+const ALoginScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.centerallxy}>
@@ -283,9 +314,27 @@ const LoginScreen = ({ navigation }) => {
                 <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
 								
 				<View style={styles.button}>
-                    <Button title="Login" onPress={LoginUser} />
+                    <Button title="Login" onPress={() => navigation.navigate("AHome")} />
                 </View>
-                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("Register")}>
+            </View>
+        </ScrollView>
+    );
+};
+
+const CLoginScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View style={styles.centerallxy}>
+                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Text style={styles.margintop}>Email</Text>
+                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
+                <Text style={styles.margintop}>Password</Text>
+                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+								
+				<View style={styles.button}>
+                    <Button title="Login" onPress={() => navigation.navigate("CHome")} />
+                </View>
+                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("CRegister")}>
                     {"\n"}Click Here to Create a New Account
                 </Text>
             </View>
@@ -293,34 +342,152 @@ const LoginScreen = ({ navigation }) => {
     );
 };
 
-	const LoginUser = ({ navigation }) => {
-		if (email == "customer")
-		{
-			navigation.navigate("CHome");
-		}
-		else if (email == "deliveryman")
-		{
-			navigation.navigate("DMHome");
-		}
-		else if (email == "deliverymencompany")
-		{
-			navigation.navigate("DMCHome");
-		}
-		else if (email == "ecommercecompany")
-		{
-			navigation.navigate("MHome");
-		}
-		else
-		{
-			console.log("Have You Recevied The Message?");		
-		}
-	};
+const DMLoginScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View style={styles.centerallxy}>
+                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Text style={styles.margintop}>Email</Text>
+                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
+                <Text style={styles.margintop}>Password</Text>
+                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+								
+				<View style={styles.button}>
+                    <Button title="Login" onPress={() => navigation.navigate("DMHome")} />
+                </View>
+                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("DMRegister")}>
+                    {"\n"}Click Here to Create a New Account
+                </Text>
+            </View>
+        </ScrollView>
+    );
+};
 
+const DMCLoginScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View style={styles.centerallxy}>
+                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Text style={styles.margintop}>Email</Text>
+                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
+                <Text style={styles.margintop}>Password</Text>
+                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+								
+				<View style={styles.button}>
+                    <Button title="Login" onPress={() => navigation.navigate("DMCHome")} />
+                </View>
+                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("DMCRegister")}>
+                    {"\n"}Click Here to Create a New Account
+                </Text>
+            </View>
+        </ScrollView>
+    );
+};
 
-{
-    /* To Shaheem: you can change the list to match deliverymen */
-}
-const DMHomeScreen = ({ navigation }) => {
+const ECCLoginScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View style={styles.centerallxy}>
+                <Image borderWidth={2} borderColor={THEME_COLOR} borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/deliverymen.png")}></Image>
+                <Text style={styles.margintop}>Email</Text>
+                <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (email = val)}></TextInput>
+                <Text style={styles.margintop}>Password</Text>
+                <TextInput secureTextEntry={true} placeholder="e.g. IownTesla" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
+								
+				<View style={styles.button}>
+                    <Button title="Login" onPress={() => navigation.navigate("ECCHome")} />
+                </View>
+                <Text style={{ color: THEME_COLOR }} numberOfLines={2} onPress={() => navigation.navigate("ECCRegister")}>
+                    {"\n"}Click Here to Create a New Account
+                </Text>
+            </View>
+        </ScrollView>
+    );
+};
+
+const CRegisterScreen = ({ navigation }) => {
+    return (
+        <View style={styles.centerallxy}>
+            <Text>Fill in the following details:{"\n"}</Text>
+            <Text>E-mail</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Password</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. IownTesla" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Full Name</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. Elon Musk" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Address</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. 3500 Deer Creek Road Palo Alto, CA 94304" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Contact Number</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. 8006627232" onChangeText={(val) => (registeryinput = val)}></TextInput>
+
+            <View style={styles.button}>
+                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
+            </View>
+        </View>
+    );
+};
+
+const DMRegisterScreen = ({ navigation }) => {
+    return (
+        <View style={styles.centerallxy}>
+            <Text>Please Contact A Delivery Man Company</Text>
+        </View>
+    );
+};
+
+const DMCRegisterScreen = ({ navigation }) => {
+    return (
+        <View style={styles.centerallxy}>
+            <Text>Fill in the following details:{"\n"}</Text>
+            <Text>E-mail</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. qqrunners@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Password</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. iprovidedeliverymen" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Full Name</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. Quentin Quantavius" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Contact Number</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. 090078601" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Bank Account Number</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. 99135123908712312" onChangeText={(val) => (registeryinput = val)}></TextInput>
+
+            <View style={styles.button}>
+                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
+            </View>
+        </View>
+    );
+};
+
+const ECCRegisterScreen = ({ navigation }) => {
+    return (
+        <View style={styles.centerallxy}>
+            <Text>Fill in the following details:{"\n"}</Text>
+            <Text>E-mail</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. pcimage@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Password</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. ilovecomputers" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Company Name</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. PC Image" onChangeText={(val) => (registeryinput = val)}></TextInput>
+            <Text>Contact Number</Text>
+            <TextInput style={styles.inputtext} placeholder="e.g. 082246503" onChangeText={(val) => (registeryinput = val)}></TextInput>
+
+            <View style={styles.button}>
+                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
+            </View>
+        </View>
+    );
+};
+
+const RegisterSuccessScreen = ({ navigation }) => {
+    return (
+        <View style={styles.RegisterSuccess}>
+            <Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/approval.png")}></Image>
+            <Text style={{ color: "#FFFFFF" }}>Your Account Has Been Registered Successfully{"\n"}</Text>
+            <Button title="Return To Login Screen" onPress={() => navigation.navigate("Login")} />
+        </View>
+    );
+};
+
+const AHomeScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View>
@@ -328,7 +495,7 @@ const DMHomeScreen = ({ navigation }) => {
                     <Image style={styles.mainpp} source={require("./assets/profile.png")} />
                 </View>
                 <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h1}>Hey, Deliveryman</Text>
+                    <Text style={styles.h1}>Hey, Admin</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -424,12 +591,116 @@ const CHomeScreen = ({ navigation }) => {
     );
 };
 
-const MHomeScreen = ({ navigation }) => {
+const DMHomeScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View>
+                <View style={styles.centerxy}>
+                    <Image style={styles.mainpp} source={require("./assets/profile.png")} />
+                </View>
+                <View style={(styles.listtext, styles.margin)}>
+                    <Text style={styles.h1}>Hey, Deliveryman</Text>
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/edit.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/location.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/help.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+        </ScrollView>
+    );
+};
+
+const DMCHomeScreen = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <View>
+                <View style={styles.centerxy}>
+                    <Image style={styles.mainpp} source={require("./assets/profile.png")} />
+                </View>
+                <View style={(styles.listtext, styles.margin)}>
+                    <Text style={styles.h1}>Hey, Delivery Men Company</Text>
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/edit.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/location.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listtext}>
+                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
+                </View>
+                <View style={styles.listiconright}>
+                    <Image style={styles.smallicon} source={require("./assets/help.png")} />
+                </View>
+            </View>
+            <View style={styles.listline} />
+        </ScrollView>
+    );
+};
+
+const ECCHomeScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <View>
                 <View style={styles.listtext, styles.listonlymargintop}>
-                    <Text style={styles.h1}>Company name...</Text>
+                    <Text style={styles.h1}>E-Commerce Company name...</Text>
                 </View>
             </View>
             <View style={styles.listline} />
@@ -463,7 +734,7 @@ const MHomeScreen = ({ navigation }) => {
             <View>
                 <View style={styles.centerallxy}>
                     <View style={styles.button}>
-                        <Button title="Log Out" onPress={() => navigation.navigate("Login")} />
+                        <Button title="Log Out" onPress={() => navigation.navigate("LoginSelection")} />
                     </View>
                 </View>
             </View>
@@ -522,7 +793,7 @@ const EditProfileScreen = ({ navigation }) => {
             <View>
                 <View style={styles.centerallxy}>
                     <View style={styles.button}>
-                        <Button title="Log Out" onPress={() => navigation.navigate("Login")} />
+                        <Button title="Log Out" onPress={() => navigation.navigate("LoginSelection")} />
                     </View>
                 </View>
             </View>
@@ -568,25 +839,6 @@ const EditPasswordScreen = ({ navigation }) => {
                     <View style={styles.button}>
                         <Button title="Save Changes" onPress={() => navigation.navigate("DMHome")} />
                     </View>
-                </View>
-            </View>
-        </ScrollView>
-    );
-};
-
-const RegisterScreen = ({ navigation }) => {
-    return (
-        <ScrollView>
-            <View style={styles.centerallxy}>
-                <Text>Select Account Type</Text>
-                <View style={styles.button}>
-                    <Button title="Customer" onPress={() => navigation.navigate("CRegister")} />
-                </View>
-                <View style={styles.button}>
-                    <Button title="E-Commerce Platform" onPress={() => navigation.navigate("ECRegister")} />
-                </View>
-                <View style={styles.button}>
-                    <Button title="Delivery Men Company" onPress={() => navigation.navigate("DMCRegister")} />
                 </View>
             </View>
         </ScrollView>
@@ -682,78 +934,5 @@ const HelpScreen = ({ navigation }) => {
     return <Text>This is Janes profile</Text>;
 };
 
-const CRegisterScreen = ({ navigation }) => {
-    return (
-        <View style={styles.centerallxy}>
-            <Text>Fill in the following details:{"\n"}</Text>
-            <Text>E-mail</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. elonmusk@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Password</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. IownTesla" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Full Name</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. Elon Musk" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Address</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 3500 Deer Creek Road Palo Alto, CA 94304" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Contact Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 8006627232" onChangeText={(val) => (registeryinput = val)}></TextInput>
-
-            <View style={styles.button}>
-                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
-            </View>
-        </View>
-    );
-};
-
-const ECRegisterScreen = ({ navigation }) => {
-    return (
-        <View style={styles.centerallxy}>
-            <Text>Fill in the following details:{"\n"}</Text>
-            <Text>E-mail</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. pcimage@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Password</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. ilovecomputers" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Company Name</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. PC Image" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Contact Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 082246503" onChangeText={(val) => (registeryinput = val)}></TextInput>
-
-            <View style={styles.button}>
-                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
-            </View>
-        </View>
-    );
-};
-
-const DMCRegisterScreen = ({ navigation }) => {
-    return (
-        <View style={styles.centerallxy}>
-            <Text>Fill in the following details:{"\n"}</Text>
-            <Text>E-mail</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. qqrunners@gmail.com" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Password</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. iprovidedeliverymen" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Full Name</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. Quentin Quantavius" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Contact Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 090078601" onChangeText={(val) => (registeryinput = val)}></TextInput>
-            <Text>Bank Account Number</Text>
-            <TextInput style={styles.inputtext} placeholder="e.g. 99135123908712312" onChangeText={(val) => (registeryinput = val)}></TextInput>
-
-            <View style={styles.button}>
-                <Button title="Register" onPress={() => navigation.navigate("RegisterSuccess")} />
-            </View>
-        </View>
-    );
-};
-
-const RegisterSuccessScreen = ({ navigation }) => {
-    return (
-        <View style={styles.RegisterSuccess}>
-            <Image borderRadius={360} blurRadius={0} style={styles.mainpp} source={require("./assets/approval.png")}></Image>
-            <Text style={{ color: "#FFFFFF" }}>Your Account Has Been Registered Successfully{"\n"}</Text>
-            <Button title="Return To Login Screen" onPress={() => navigation.navigate("Login")} />
-        </View>
-    );
-};
-
 export default App;
+
