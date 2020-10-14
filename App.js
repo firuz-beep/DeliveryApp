@@ -1,8 +1,9 @@
 import "react-native-gesture-handler";
-import * as React from "react";
+import React, { useEffect, useState } from 'react';
+{/*import * as React from "react";*/}
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground, TouchableOpacity } from "react-native";
+import { ActivityIndicator, FlatList, Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground, TouchableOpacity } from "react-native";
 
 const Stack = createStackNavigator();
 const THEME_COLOR = "#2081D0";
@@ -1057,7 +1058,34 @@ const OrderConfirmedScreen = ({ navigation }) => {
 };
 
 const HelpScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+	
+	{/*Code from: https://reactnative.dev/docs/network*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://reactnative.dev/movies.json')
+      .then((response) => response.json())
+      .then((json) => setData(json.movies))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
+	<View style={{ flex: 1, padding: 24 }}>
+		{isLoading ? <ActivityIndicator/> : (
+        <FlatList
+          data={data}
+          keyExtractor={({ id }, index) => id}
+          renderItem={({ item }) => (
+            <Text>{item.title}, {item.releaseYear}</Text>
+          )}
+        />
+      )}
+    </View>
+	);
 };
 
 export default App;
