@@ -1,6 +1,5 @@
 import "react-native-gesture-handler";
 import React, { useEffect, useState } from 'react';
-{/*import * as React from "react";*/}
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ActivityIndicator, FlatList, Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground, TouchableOpacity } from "react-native";
@@ -115,13 +114,13 @@ const App = () => {
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
-                    name="PastDeliveries"
-                    component={PastDeliveriesScreen}
+                    name="OrderList"
+                    component={OrderListScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
-                    name="PastDelivery"
-                    component={PastDeliveryScreen}
+                    name="OrderDetails"
+                    component={OrderDetailsScreen}
                     options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
                 />
                 <Stack.Screen
@@ -371,6 +370,13 @@ const styles = StyleSheet.create({
 		paddingTop: 15,
 	},
 	
+	listfont: {
+		color: "#FFFFFF",
+        fontSize: 15,
+		paddingLeft: 15,
+		paddingTop: 5,
+	},
+	
 	buttonview: {
 		borderRadius: 10,
 		marginLeft: 10,
@@ -615,7 +621,7 @@ const AHomeScreen = ({ navigation }) => {
 			
             <View style={styles.listlineblue} />
 			
-			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
                 <Text style={styles.buttonfont}>View All Orders</Text>
 				<View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
@@ -671,7 +677,7 @@ const CHomeScreen = ({ navigation }) => {
             <View style={styles.listline} />
             <View style={styles.listitems}>
                 <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
+                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("OrderList")} />
                 </View>
                 <View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
@@ -725,7 +731,7 @@ const DMHomeScreen = ({ navigation }) => {
             <View style={styles.listline} />
             <View style={styles.listitems}>
                 <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
+                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("OrderList")} />
                 </View>
                 <View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
@@ -779,7 +785,7 @@ const DMCHomeScreen = ({ navigation }) => {
             <View style={styles.listline} />
             <View style={styles.listitems}>
                 <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("PastDeliveries")} />
+                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("OrderList")} />
                 </View>
                 <View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
@@ -824,7 +830,7 @@ const ECCHomeScreen = ({ navigation }) => {
             <View style={styles.listline} />
             <View style={styles.listitems}>
                 <View style={styles.listtext}>
-                    <Button title="View Past Orders" onPress={() => navigation.navigate("PastDeliveries")} />
+                    <Button title="View Past Orders" onPress={() => navigation.navigate("OrderList")} />
                 </View>
                 <View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/pastorder.png")} />
@@ -833,7 +839,7 @@ const ECCHomeScreen = ({ navigation }) => {
             <View style={styles.listline} />
             <View style={styles.listitems}>
                 <View style={styles.listtext}>
-                    <Button title="View Current Order" onPress={() => navigation.navigate("PastDeliveries")} />
+                    <Button title="View Current Order" onPress={() => navigation.navigate("OrderList")} />
                 </View>
                 <View style={styles.listiconright}>
                     <Image style={styles.smallicon} source={require("./assets/currentorder.png")} />
@@ -968,41 +974,46 @@ const EditPasswordScreen = ({ navigation }) => {
     );
 };
 
-const ChangePasswordScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
-};
-
-const PastDeliveriesScreen = ({ navigation }) => {
-    return PastDeliveriesList({ navigation }),PastDeliveriesList({ navigation }),PastDeliveriesList({ navigation });
-};
-
-{/* To Firuz: pass order history here */}
-const PastDeliveriesList = ({ navigation }) => {
-    return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
+const OrderListScreen = ({ navigation }) => {
+	
+	{/*Following code is required to fetch from json file*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://api.jsonbin.io/b/5f8740e27243cd7e824f3898/6')
+      .then((response) => response.json())
+      .then((json) => setData(json.orders))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
 		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
-            <View style={styles.listitemsonly}>
-                <View style={styles.listitems}>
-                    <View style={styles.listitemscolumn}>
-                        <View>
-                            <Button title="Order..." onPress={() => navigation.navigate("PastDelivery")} />
-                        </View>
-                        <View style={styles.datemargin}>
-                            <Text>date...</Text>
-                        </View>
-                    </View>
-                    <View style={styles.listiconright}>
-                        <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
-                    </View>
-                </View>
-                <View style={styles.listline} />
-            </View>
+				
+				{isLoading ? <ActivityIndicator/> : (
+				<FlatList
+				  data={data}
+				  keyExtractor={({ orderid }, index) => orderid}
+				  renderItem={({ item }) => (
+					<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderDetails")}>
+						<View flex={3}>
+							<Text numberOfLines={2}style={styles.listfont}>Order ID: {item.orderid}{"\n"}Product: {item.productname}</Text>
+						</View>
+						<View style={styles.listiconright} flex={1}>
+							<Image style={styles.smallicon} source={require("./assets/parcel.png")} />
+						</View>
+					</TouchableOpacity>
+				  )}
+				/>
+			  )}
 		</ImageBackground>
-	</ScrollView>
-    );
+	);
 };
 
-const PastDeliveryScreen = ({ navigation }) => {
+const OrderDetailsScreen = ({ navigation }) => {
     return (
 	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
 		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
@@ -1042,52 +1053,27 @@ const PastDeliveryScreen = ({ navigation }) => {
 };
 
 const PlaceOrderScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+    return <Text>This Screen is Under Construction</Text>;
 };
 
 const OrderPlacedScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+    return <Text>This Screen is Under Construction</Text>;
 };
 
 const ConfirmOrderScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+    return <Text>This Screen is Under Construction</Text>;
 };
 
 const OrderConfirmedScreen = ({ navigation }) => {
-    return <Text>This is Janes profile</Text>;
+    return <Text>This Screen is Under Construction</Text>;
 };
 
 const HelpScreen = ({ navigation }) => {
-	
-	{/*Following code is required to fetch from json file*/}
-	
-	const [isLoading, setLoading] = useState(true);
-	const [data, setData] = useState([]);
-	
-	useEffect(() => {
-    fetch('https://api.jsonbin.io/b/5f8740e27243cd7e824f3898/2')
-      .then((response) => response.json())
-      .then((json) => setData(json.orders))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-	}, []);
-	
-	
-	return (
-	<View style={{ flex: 1, padding: 24 }}>
-		<Text>OrderID{"\t"}ProductName{"\t"}ECCID{"\t"}DMCID{"\t"}CID{"\t"}AssignedDMID{"\t"}DeliveryFee{"\t"}PaymentStatus{"\t"}DeliveryStatus{"\t"}Complaint{"\t"}PickupAddress{"\t"}DropOffAddress</Text>
+    return <Text>This Screen is Under Construction</Text>;
+};
 
-		{isLoading ? <ActivityIndicator/> : (
-        <FlatList
-          data={data}
-          keyExtractor={({ OrderID }, index) => OrderID}
-          renderItem={({ item }) => (
-			<Text>{item.OrderID}{"\t"}{item.ProductName}{"\t"}{item.ECCID}{"\t"}{item.DMCID}{"\t"}{item.CID}{"\t"}{item.AssignedDMID}{"\t"}{item.DeliveryFee}{"\t"}{item.PaymentStatus}{"\t"}{item.DeliveryStatus}{"\t"}{item.Complaint}{"\t"}{item.PickupAddress}{"\t"}{item.DropOffAddress}</Text>
-          )}
-        />
-      )}
-    </View>
-	);
+const ChangePasswordScreen = ({ navigation }) => {
+    return <Text>This Screen is Under Construction</Text>;
 };
 
 export default App;
