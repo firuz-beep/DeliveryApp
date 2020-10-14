@@ -1059,15 +1059,15 @@ const OrderConfirmedScreen = ({ navigation }) => {
 
 const HelpScreen = ({ navigation }) => {
 	
-	{/*Code from: https://reactnative.dev/docs/network*/}
+	{/*Following code is required to fetch from json file*/}
 	
 	const [isLoading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
 	
 	useEffect(() => {
-    fetch('https://reactnative.dev/movies.json')
+    fetch('https://api.jsonbin.io/b/5f8740e27243cd7e824f3898/2')
       .then((response) => response.json())
-      .then((json) => setData(json.movies))
+      .then((json) => setData(json.orders))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
 	}, []);
@@ -1075,12 +1075,14 @@ const HelpScreen = ({ navigation }) => {
 	
 	return (
 	<View style={{ flex: 1, padding: 24 }}>
+		<Text>OrderID{"\t"}ProductName{"\t"}ECCID{"\t"}DMCID{"\t"}CID{"\t"}AssignedDMID{"\t"}DeliveryFee{"\t"}PaymentStatus{"\t"}DeliveryStatus{"\t"}Complaint{"\t"}PickupAddress{"\t"}DropOffAddress</Text>
+
 		{isLoading ? <ActivityIndicator/> : (
         <FlatList
           data={data}
-          keyExtractor={({ id }, index) => id}
+          keyExtractor={({ OrderID }, index) => OrderID}
           renderItem={({ item }) => (
-            <Text>{item.title}, {item.releaseYear}</Text>
+			<Text>{item.OrderID}{"\t"}{item.ProductName}{"\t"}{item.ECCID}{"\t"}{item.DMCID}{"\t"}{item.CID}{"\t"}{item.AssignedDMID}{"\t"}{item.DeliveryFee}{"\t"}{item.PaymentStatus}{"\t"}{item.DeliveryStatus}{"\t"}{item.Complaint}{"\t"}{item.PickupAddress}{"\t"}{item.DropOffAddress}</Text>
           )}
         />
       )}
