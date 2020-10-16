@@ -6,6 +6,7 @@ import { ActivityIndicator, FlatList, Dimensions, StyleSheet, SafeAreaView, Stat
 
 const Stack = createStackNavigator();
 const THEME_COLOR = "#2081D0";
+const DISABLED_COLOR = '#999999';
 
 var email = "elonmusk@gmail.com";
 var password = "IownTesla";
@@ -349,7 +350,37 @@ const styles = StyleSheet.create({
     },
 	
 	buttontext: {
-		color: 'white'
+		color: 'white',
+		fontSize: 20,
+		fontWeight: 'bold',
+		marginTop: 5,
+		marginBottom: 5,
+	},
+	
+	buttonposition: {
+		borderRadius: 10,
+		marginLeft: 10,
+		marginRight: 10,
+		marginTop: 5,
+		marginBottom: 5,
+		padding: 10,
+		backgroundColor: THEME_COLOR,
+		width: '95%',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	
+	buttondisabled: {
+		borderRadius: 10,
+		marginLeft: 10,
+		marginRight: 10,
+		marginTop: 5,
+		marginBottom: 5,
+		padding: 10,
+		backgroundColor: DISABLED_COLOR,
+		width: '95%',
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 
     buttonleft: {
@@ -1027,14 +1058,129 @@ const PlaceOrderScreen = ({ navigation }) => {
 };
 
 const OrderPlacedScreen = ({ navigation }) => {
+	return (
+	<ScrollView style={styles.bgcolor}>	
+            <View>
+                <View style={styles.centerxy}>
+                    <Image style={styles.mainpp} source={require("./assets/delivering.gif")} />
+                </View>
+                <View style={(styles.listtext, styles.margin)}>
+                    <Text>Your order is on its way!</Text>
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listitemscolumn}>
+                    <View style={(styles.listtext, styles.margin)}>
+                        <Text>Delivering to</Text>
+                    </View>
+                    <View style={styles.listitemsrow}>
+                        <View style={styles.listiconleft}>
+                            <Image style={styles.smallicon} source={require("./assets/location.png")} />
+                        </View>
+                        <View style={styles.listitemscolumn}>
+                            <View style={(styles.listtext, styles.margintop)}>
+                                <Text>name...</Text>
+                            </View>
+                            <View style={(styles.listtext, styles.margintop)}>
+                                <Text>details...</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.listline} />
+				{/* functionality should be removed */}
+			<View style={styles.buttondisabled}>
+				<TouchableOpacity onPress={() => navigation.navigate("ConfirmOrder")}>
+					<View>
+						<Text style={ styles.buttontext }>Confirm Delivery</Text>
+					</View>
+				</TouchableOpacity>
+			</View>
+	</ScrollView>
+	);
 };
 
 const ConfirmOrderScreen = ({ navigation }) => {
-    return <Text>This Screen is Under Construction</Text>;
+    return (
+	<ScrollView style={styles.bgcolor}>	
+            <View>
+                <View style={styles.centerxy}>
+                    <Image style={styles.mainpp} source={require("./assets/delivering.gif")} />
+                </View>
+                <View style={(styles.listtext, styles.margin)}>
+                    <Text>Your order is almost there!</Text>
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listitemscolumn}>
+                    <View style={(styles.listtext, styles.margin)}>
+                        <Text>Delivering to</Text>
+                    </View>
+                    <View style={styles.listitemsrow}>
+                        <View style={styles.listiconleft}>
+                            <Image style={styles.smallicon} source={require("./assets/location.png")} />
+                        </View>
+                        <View style={styles.listitemscolumn}>
+                            <View style={(styles.listtext, styles.margintop)}>
+                                <Text>name...</Text>
+                            </View>
+                            <View style={(styles.listtext, styles.margintop)}>
+                                <Text>details...</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.listline} />
+			<View style={styles.buttonposition}>
+				<TouchableOpacity onPress={() => navigation.navigate("OrderConfirmed")}>
+					<View>
+						<Text style={ styles.buttontext }>Confirm Delivery</Text>
+					</View>
+				</TouchableOpacity>
+			</View>
+	</ScrollView>
+	);
 };
 
 const OrderConfirmedScreen = ({ navigation }) => {
-    return <Text>This Screen is Under Construction</Text>;
+    return (
+	<ScrollView style={styles.bgcolor}>	
+            <View>
+                <View style={styles.centerxy}>
+                    <Image style={styles.mainpp} source={require("./assets/delivered.png")} />
+                </View>
+                <View style={(styles.listtext, styles.margin)}>
+                    <Text>Your order has arrived!</Text>
+                </View>
+            </View>
+            <View style={styles.listline} />
+            <View style={styles.listitems}>
+                <View style={styles.listitemscolumn}>
+                    <View style={(styles.listtext, styles.margin)}>
+                        <Text>Delivered to</Text>
+                    </View>
+                    <View style={styles.listitemsrow}>
+                        <View style={styles.listiconleft}>
+                            <Image style={styles.smallicon} source={require("./assets/location.png")} />
+                        </View>
+                        <View style={styles.listitemscolumn}>
+                            <View style={(styles.listtext, styles.margintop)}>
+                                <Text>name...</Text>
+                            </View>
+                            <View style={(styles.listtext, styles.margintop)}>
+                                <Text>details...</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.listline} />
+	</ScrollView>
+	);
 };
 
 const HelpScreen = ({ navigation }) => {
