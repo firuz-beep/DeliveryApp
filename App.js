@@ -154,6 +154,10 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+	bgcolor: {
+		backgroundColor: "#ffffff"
+	},
+	
     centerxy: {
         justifyContent: "center",
         alignItems: "center",
@@ -392,8 +396,7 @@ const styles = StyleSheet.create({
 
 const LoginSelectionScreen = ({ navigation }) => {
 	return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
 			<View style={styles.centerallxy}>
 				<Image style={styles.logoimage} source={require("./assets/logo.png")}></Image>
 				<Text style={styles.h3}>Select a User Type</Text>
@@ -404,15 +407,13 @@ const LoginSelectionScreen = ({ navigation }) => {
 				<View style={styles.button}><Button style={styles.button} title="Delivery Men Company" onPress={() => navigation.navigate("DMCLogin")} /></View>
 				<View style={styles.button}><Button style={styles.button} title="E-Commerce Company" onPress={() => navigation.navigate("ECCLogin")} /></View>
 			</View>
-		</ImageBackground>
 	</ScrollView>
 	);
 };
 
 const ALoginScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")}></Image>
 				<Text style={styles.h3}>Admin Login</Text>
@@ -424,15 +425,13 @@ const ALoginScreen = ({ navigation }) => {
                     <Button title="Login" onPress={() => navigation.navigate("AHome")} />
                 </View>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const CLoginScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")}></Image>
 				<Text style={styles.h3}>Customer Login</Text>
@@ -446,15 +445,13 @@ const CLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("CRegister")}>Click Here to Create a New Account</Text>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const DMLoginScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")}></Image>
 				<Text style={styles.h3}>Delivery Man Login</Text>
@@ -468,15 +465,13 @@ const DMLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("DMRegister")}>Click Here to Create a New Account</Text>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const DMCLoginScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")}></Image>
 				<Text style={styles.h3}>Delivery Men Company Login</Text>
@@ -490,15 +485,13 @@ const DMCLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("DMCRegister")}>Click Here to Create a New Account</Text>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const ECCLoginScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")}></Image>
 				<Text style={styles.h3}>E-Commerce Company Login</Text>
@@ -512,15 +505,13 @@ const ECCLoginScreen = ({ navigation }) => {
 				<Text>{"\n"}</Text>
                 <Text style={{ color: THEME_COLOR }} onPress={() => navigation.navigate("ECCRegister")}>Click Here to Create a New Account</Text>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const CRegisterScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")}></Image>
 				<Text style={styles.h3}>Customer Registeration</Text>
@@ -536,7 +527,6 @@ const CRegisterScreen = ({ navigation }) => {
 				</View>
 			
 			</View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
@@ -551,8 +541,7 @@ const DMRegisterScreen = ({ navigation }) => {
 
 const DMCRegisterScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.cprofileimage} source={require("./assets/dmcprofile.png")}></Image>
 				<Text style={styles.h3}>Customer Registeration</Text>
@@ -568,15 +557,13 @@ const DMCRegisterScreen = ({ navigation }) => {
 				</View>
 			
 			</View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const ECCRegisterScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.centerallxy}>
                 <Image style={styles.cprofileimage} source={require("./assets/eccprofile.png")}></Image>
 				<Text style={styles.h3}>Customer Registeration</Text>
@@ -591,7 +578,6 @@ const ECCRegisterScreen = ({ navigation }) => {
 				</View>
 			
 			</View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
@@ -608,8 +594,7 @@ const RegisterSuccessScreen = ({ navigation }) => {
 
 const AHomeScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")} />
@@ -648,15 +633,13 @@ const AHomeScreen = ({ navigation }) => {
                     <Image style={styles.smallicon} source={require("./assets/payments.png")} />
                 </View>
 			</TouchableOpacity>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const CHomeScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")} />
@@ -702,15 +685,13 @@ const CHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const DMHomeScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")} />
@@ -756,15 +737,13 @@ const DMHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const DMCHomeScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")} />
@@ -810,15 +789,13 @@ const DMCHomeScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const ECCHomeScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")} />
@@ -862,15 +839,13 @@ const ECCHomeScreen = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const EditProfileScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.mediumicon} source={require("./assets/profile.png")} />
@@ -923,15 +898,13 @@ const EditProfileScreen = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
 
 const EditPasswordScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={ styles.bgcolor }>	
             <View style={styles.listitems}>
                 <View style={(styles.listtext, styles.listonlymargintop)}>
                     <Text style={styles.lighttextcolor}>Old Password</Text>
@@ -969,7 +942,6 @@ const EditPasswordScreen = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-		</ImageBackground>
 	</ScrollView>
     );
 };
@@ -991,7 +963,7 @@ const OrderListScreen = ({ navigation }) => {
 	
 	
 	return (
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+		<View style={styles.bgcolor}>
 				
 				{isLoading ? <ActivityIndicator/> : (
 				<FlatList
@@ -1009,14 +981,13 @@ const OrderListScreen = ({ navigation }) => {
 				  )}
 				/>
 			  )}
-		</ImageBackground>
+		</View>
 	);
 };
 
 const OrderDetailsScreen = ({ navigation }) => {
     return (
-	<ScrollView contentContainerStyle={{flexGrow: 1}}>	
-		<ImageBackground source={require("./assets/background.png")} style={{ flex: 1, resizeMode: "cover", justifyContent: "center"}}>	
+	<ScrollView style={styles.bgcolor}>	
             <View>
                 <View style={styles.centerxy}>
                     <Image style={styles.mainpp} source={require("./assets/delivered.png")} />
@@ -1047,7 +1018,6 @@ const OrderDetailsScreen = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.listline} />
-		</ImageBackground>
 	</ScrollView>
     );
 };
@@ -1057,7 +1027,6 @@ const PlaceOrderScreen = ({ navigation }) => {
 };
 
 const OrderPlacedScreen = ({ navigation }) => {
-    return <Text>This Screen is Under Construction</Text>;
 };
 
 const ConfirmOrderScreen = ({ navigation }) => {
