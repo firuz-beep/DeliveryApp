@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
 import React, { useEffect, useState } from 'react';
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, StackActions } from "@react-navigation/native";
+import { createStackNavigator} from "@react-navigation/stack";
 import { ActivityIndicator, FlatList, Dimensions, StyleSheet, SafeAreaView, StatusBar, View, Button, Image, ScrollView, Text, TextInput, ImageBackground, TouchableOpacity } from "react-native";
 
 const Stack = createStackNavigator();
@@ -22,132 +22,157 @@ const App = () => {
                 <Stack.Screen
                     name="LoginSelection"
                     component={LoginSelectionScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="ALogin"
                     component={ALoginScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="CLogin"
                     component={CLoginScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="DMLogin"
                     component={DMLoginScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="DMCLogin"
                     component={DMCLoginScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="ECCLogin"
                     component={ECCLoginScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="AHome"
                     component={AHomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="CHome"
                     component={CHomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="DMHome"
                     component={DMHomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="DMCHome"
                     component={DMCHomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="ECCHome"
                     component={ECCHomeScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="CRegister"
                     component={CRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="DMRegister"
                     component={DMRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="DMCRegister"
                     component={DMCRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
 				<Stack.Screen
                     name="ECCRegister"
                     component={ECCRegisterScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="RegisterSuccess"
                     component={RegisterSuccessScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="EditProfile"
                     component={EditProfileScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="EditPassword"
                     component={EditPasswordScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="ChangePassword"
                     component={ChangePasswordScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="OrderList"
                     component={OrderListScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
+                />
+				<Stack.Screen
+                    name="ECCList"
+                    component={ECCListScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
+                />
+				<Stack.Screen
+                    name="ComplaintList"
+                    component={ComplaintListScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
+                />
+				<Stack.Screen
+                    name="CList"
+                    component={CListScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
+                />
+				<Stack.Screen
+                    name="DMList"
+                    component={DMListScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
+                />
+				<Stack.Screen
+                    name="DMCList"
+                    component={DMCListScreen}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="OrderDetails"
                     component={OrderDetailsScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="PlaceOrder"
                     component={PlaceOrderScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="OrderPlaced"
                     component={OrderPlacedScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="ConfirmOrder"
                     component={ConfirmOrderScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="OrderConfirmed"
                     component={OrderConfirmedScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
                 <Stack.Screen
                     name="Help"
                     component={HelpScreen}
-                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }, headerBackTitleVisible: false }}
+                    options={{ title: "Delivery App", headerTitleAlign: "center", headerStyle: { backgroundColor: THEME_COLOR }, headerTintColor: "white", headerTitleStyle: { fontWeight: "bold" }}}
                 />
             </Stack.Navigator>
         </NavigationContainer>
@@ -406,7 +431,7 @@ const styles = StyleSheet.create({
 	},
 	
 	listfont: {
-		color: "#FFFFFF",
+		color: "#000000",
         fontSize: 15,
 		paddingLeft: 15,
 		paddingTop: 5,
@@ -420,6 +445,18 @@ const styles = StyleSheet.create({
 		marginBottom: 5,
 		padding: 10,
 		backgroundColor: THEME_COLOR,
+		flexDirection: "row",
+		justifyContent: "space-between"
+	},
+	
+	listview: {
+		borderRadius: 10,
+		marginLeft: 10,
+		marginRight: 10,
+		marginTop: 5,
+		marginBottom: 5,
+		padding: 10,
+		backgroundColor: "#CDCDCD",
 		flexDirection: "row",
 		justifyContent: "space-between"
 	},
@@ -453,7 +490,7 @@ const ALoginScreen = ({ navigation }) => {
                 <TextInput secureTextEntry={true} placeholder="Password" style={styles.inputtext} onChangeText={(val) => (password = val)}></TextInput>
 				<Text>{"\n"}</Text>
 				<View style={styles.button}>
-                    <Button title="Login" onPress={() => navigation.navigate("AHome")} />
+                    <Button title="Login" onPress={() => navigation.dispatch(StackActions.replace('AHome'))} />
                 </View>
             </View>
 	</ScrollView>
@@ -626,44 +663,58 @@ const RegisterSuccessScreen = ({ navigation }) => {
 const AHomeScreen = ({ navigation }) => {
     return (
 	<ScrollView style={ styles.bgcolor }>	
-            <View>
-                <View style={styles.centerxy}>
-                    <Image style={styles.aprofileimage} source={require("./assets/aprofile.png")} />
-                </View>
-                <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h3}>Hey, Admin</Text>
-                </View>
-            </View>
-			
-            <View style={styles.listlineblue} />
-			
-			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
-                <Text style={styles.buttonfont}>View All Orders</Text>
-				<View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
-                </View>
-			</TouchableOpacity>
-			
-			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
-                <Text style={styles.buttonfont}>View Delivery Men Companies</Text>
-				<View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/delivery.png")} />
-                </View>
-			</TouchableOpacity>
+		<View>
+			<View style={styles.centerxy}>
+				<Image style={styles.aprofileimage} source={require("./assets/aprofile.png")} />
+			</View>
+			<View style={(styles.listtext, styles.margin)}>
+				<Text style={styles.h3}>Welcome Admin</Text>
+			</View>
+		</View>
+		
+		<View style={styles.listlineblue} />
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
+			<Text style={styles.buttonfont}>View All Orders</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/parcel.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("DMCList")}>
+			<Text style={styles.buttonfont}>View Delivery Men Companies</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/dmcicon.png")} />
+			</View>
+		</TouchableOpacity>
 
-			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
-                <Text style={styles.buttonfont}>View E-Commerce Companies</Text>
-				<View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/eccicon.png")} />
-                </View>
-			</TouchableOpacity>
-			
-			<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
-                <Text style={styles.buttonfont}>Payments</Text>
-				<View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/payments.png")} />
-                </View>
-			</TouchableOpacity>
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("ECCList")}>
+			<Text style={styles.buttonfont}>View E-Commerce Companies</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/eccicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("CList")}>
+			<Text style={styles.buttonfont}>View Customers</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/customericon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("ComplaintList")}>
+			<Text style={styles.buttonfont}>View Complaints</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/complainticon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Payment Options</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/paymenticon.png")} />
+			</View>
+		</TouchableOpacity>
 	</ScrollView>
     );
 };
@@ -671,51 +722,51 @@ const AHomeScreen = ({ navigation }) => {
 const CHomeScreen = ({ navigation }) => {
     return (
 	<ScrollView style={ styles.bgcolor }>	
-            <View>
-                <View style={styles.centerxy}>
-                    <Image style={styles.cprofileimage} source={require("./assets/cprofile.png")} />
-                </View>
-                <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h3}>Hey, customer name...</Text>
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/edit.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("OrderList")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/location.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/help.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
+		<View>
+			<View style={styles.centerxy}>
+				<Image style={styles.aprofileimage} source={require("./assets/cprofile.png")} />
+			</View>
+			<View style={(styles.listtext, styles.margin)}>
+				<Text style={styles.h3}>Welcome Customer</Text>
+			</View>
+		</View>
+		
+		<View style={styles.listlineblue} />
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderPlaced")}>
+			<Text style={styles.buttonfont}>Ongoing Delivery Order</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/dmicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
+			<Text style={styles.buttonfont}>Delivery Orders History</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/ordericon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("EditProfile")}>
+			<Text style={styles.buttonfont}>Edit Profile</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/editprofileicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Payment Options</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/paymenticon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Get Help</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/helpicon.png")} />
+			</View>
+		</TouchableOpacity>
 	</ScrollView>
     );
 };
@@ -723,51 +774,51 @@ const CHomeScreen = ({ navigation }) => {
 const DMHomeScreen = ({ navigation }) => {
     return (
 	<ScrollView style={ styles.bgcolor }>	
-            <View>
-                <View style={styles.centerxy}>
-                    <Image style={styles.dmprofileimage} source={require("./assets/dmprofile.png")} />
-                </View>
-                <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h3}>Hey, Deliveryman</Text>
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/edit.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("OrderList")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/location.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/help.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
+		<View>
+			<View style={styles.centerxy}>
+				<Image style={styles.aprofileimage} source={require("./assets/dmprofile.png")} />
+			</View>
+			<View style={(styles.listtext, styles.margin)}>
+				<Text style={styles.h3}>Welcome Delivery Man</Text>
+			</View>
+		</View>
+		
+		<View style={styles.listlineblue} />
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderPlaced")}>
+			<Text style={styles.buttonfont}>Ongoing Delivery Order</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/dmicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
+			<Text style={styles.buttonfont}>Delivery Orders History</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/ordericon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("EditProfile")}>
+			<Text style={styles.buttonfont}>Edit Profile</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/editprofileicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Payment Options</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/paymenticon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Get Help</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/helpicon.png")} />
+			</View>
+		</TouchableOpacity>
 	</ScrollView>
     );
 };
@@ -775,101 +826,96 @@ const DMHomeScreen = ({ navigation }) => {
 const DMCHomeScreen = ({ navigation }) => {
     return (
 	<ScrollView style={ styles.bgcolor }>	
-            <View>
-                <View style={styles.centerxy}>
-                    <Image style={styles.dmcprofileimage} source={require("./assets/dmcprofile.png")} />
-                </View>
-                <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h3}>Hey, Delivery Men Company</Text>
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/edit.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Past Deliveries" onPress={() => navigation.navigate("OrderList")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/parcel.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Current Delivery" onPress={() => navigation.navigate("OrderPlaced")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/location.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Get Help" onPress={() => navigation.navigate("Help")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/help.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
+		<View>
+			<View style={styles.centerxy}>
+				<Image style={styles.aprofileimage} source={require("./assets/dmcprofile.png")} />
+			</View>
+			<View style={(styles.listtext, styles.margin)}>
+				<Text style={styles.h3}>Welcome DM Company</Text>
+			</View>
+		</View>
+		
+		<View style={styles.listlineblue} />
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
+			<Text style={styles.buttonfont}>Delivery Orders History</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/ordericon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("DMList")}>
+			<Text style={styles.buttonfont}>Delivery Men</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/dmicon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("EditProfile")}>
+			<Text style={styles.buttonfont}>Edit Profile</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/editprofileicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Payment Options</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/paymenticon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Get Help</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/helpicon.png")} />
+			</View>
+		</TouchableOpacity>
 	</ScrollView>
     );
 };
 
 const ECCHomeScreen = ({ navigation }) => {
-    return (
+	return (
 	<ScrollView style={ styles.bgcolor }>	
-            <View>
-                <View style={styles.centerxy}>
-                    <Image style={styles.eccprofileimage} source={require("./assets/eccprofile.png")} />
-                </View>
-                <View style={(styles.listtext, styles.margin)}>
-                    <Text style={styles.h3}>E-Commerce Company Name</Text>
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Past Orders" onPress={() => navigation.navigate("OrderList")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/pastorder.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="View Current Order" onPress={() => navigation.navigate("OrderList")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/currentorder.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View style={styles.listitems}>
-                <View style={styles.listtext}>
-                    <Button title="Register Complaint" onPress={() => navigation.navigate("HelpScreen")} />
-                </View>
-                <View style={styles.listiconright}>
-                    <Image style={styles.smallicon} source={require("./assets/complaint.png")} />
-                </View>
-            </View>
-            <View style={styles.listline} />
-            <View>
-                <View style={styles.centerallxy}>
-                    <View style={styles.button}>
-                        <Button title="Log Out" onPress={() => navigation.navigate("LoginSelection")} />
-                    </View>
-                </View>
-            </View>
+		<View>
+			<View style={styles.centerxy}>
+				<Image style={styles.aprofileimage} source={require("./assets/eccprofile.png")} />
+			</View>
+			<View style={(styles.listtext, styles.margin)}>
+				<Text style={styles.h3}>Welcome ECC</Text>
+			</View>
+		</View>
+		
+		<View style={styles.listlineblue} />
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
+			<Text style={styles.buttonfont}>Ongoing Delivery Orders</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/dmicon.png")} />
+			</View>
+		</TouchableOpacity>
+		
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderList")}>
+			<Text style={styles.buttonfont}>Delivery Orders History</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/ordericon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("EditProfile")}>
+			<Text style={styles.buttonfont}>Edit Profile</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/editprofileicon.png")} />
+			</View>
+		</TouchableOpacity>
+
+		<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("Help")}>
+			<Text style={styles.buttonfont}>Get Help</Text>
+			<View style={styles.listiconright}>
+				<Image style={styles.smallicon} source={require("./assets/helpicon.png")} />
+			</View>
+		</TouchableOpacity>
 	</ScrollView>
     );
 };
@@ -985,7 +1031,7 @@ const OrderListScreen = ({ navigation }) => {
 	const [data, setData] = useState([]);
 	
 	useEffect(() => {
-    fetch('https://api.jsonbin.io/b/5f8740e27243cd7e824f3898/6')
+    fetch('https://api.jsonbin.io/b/5f8c7260058d9a7b94dd4e4c/2')
       .then((response) => response.json())
       .then((json) => setData(json.orders))
       .catch((error) => console.error(error))
@@ -1001,12 +1047,207 @@ const OrderListScreen = ({ navigation }) => {
 				  data={data}
 				  keyExtractor={({ orderid }, index) => orderid}
 				  renderItem={({ item }) => (
-					<TouchableOpacity style={styles.buttonview} onPress={() => navigation.navigate("OrderDetails")}>
+					<TouchableOpacity style={styles.listview} onPress={() => navigation.navigate("OrderDetails")}>
 						<View flex={3}>
 							<Text numberOfLines={2}style={styles.listfont}>Order ID: {item.orderid}{"\n"}Product: {item.productname}</Text>
 						</View>
 						<View style={styles.listiconright} flex={1}>
 							<Image style={styles.smallicon} source={require("./assets/parcel.png")} />
+						</View>
+					</TouchableOpacity>
+				  )}
+				/>
+			  )}
+		</View>
+	);
+};
+
+const ECCListScreen = ({ navigation }) => {
+	
+	{/*Following code is required to fetch from json file*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://api.jsonbin.io/b/5f8c70d2adfa7a7bbea5348e/1')
+      .then((response) => response.json())
+      .then((json) => setData(json.ecommercecompany))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
+		<View style={styles.bgcolor}>
+				
+				{isLoading ? <ActivityIndicator/> : (
+				<FlatList
+				  data={data}
+				  keyExtractor={({ eccid }, index) => eccid}
+				  renderItem={({ item }) => (
+					<TouchableOpacity style={styles.listview} onPress={() => navigation.navigate("OrderDetails")}>
+						<View flex={3}>
+							<Text numberOfLines={2}style={styles.listfont}>ECC ID: {item.eccid}{"\n"}ECC Name: {item.eccname}</Text>
+						</View>
+						<View style={styles.listiconright} flex={1}>
+							<Image style={styles.smallicon} source={require("./assets/eccicon.png")} />
+						</View>
+					</TouchableOpacity>
+				  )}
+				/>
+			  )}
+		</View>
+	);
+};
+
+const ComplaintListScreen = ({ navigation }) => {
+	
+	{/*Following code is required to fetch from json file*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://api.jsonbin.io/b/5f8c73f77243cd7e8250b5b5/1')
+      .then((response) => response.json())
+      .then((json) => setData(json.complaint))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
+		<View style={styles.bgcolor}>
+				
+				{isLoading ? <ActivityIndicator/> : (
+				<FlatList
+				  data={data}
+				  keyExtractor={({ complaintid }, index) => complaintid}
+				  renderItem={({ item }) => (
+					<TouchableOpacity style={styles.listview} onPress={() => navigation.navigate("OrderDetails")}>
+						<View flex={3}>
+							<Text numberOfLines={2}style={styles.listfont}>Complaint ID: {item.complaintid}{"\n"}Status: {item.complaintstatus}</Text>
+						</View>
+						<View style={styles.listiconright} flex={1}>
+							<Image style={styles.smallicon} source={require("./assets/complainticon.png")} />
+						</View>
+					</TouchableOpacity>
+				  )}
+				/>
+			  )}
+		</View>
+	);
+};
+
+const CListScreen = ({ navigation }) => {
+	
+	{/*Following code is required to fetch from json file*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://api.jsonbin.io/b/5f8c736dadfa7a7bbea53552/1')
+      .then((response) => response.json())
+      .then((json) => setData(json.customer))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
+		<View style={styles.bgcolor}>
+				
+				{isLoading ? <ActivityIndicator/> : (
+				<FlatList
+				  data={data}
+				  keyExtractor={({ cid }, index) => cid}
+				  renderItem={({ item }) => (
+					<TouchableOpacity style={styles.listview} onPress={() => navigation.navigate("OrderDetails")}>
+						<View flex={3}>
+							<Text numberOfLines={2}style={styles.listfont}>Customer ID: {item.cid}{"\n"}Name: {item.cname}</Text>
+						</View>
+						<View style={styles.listiconright} flex={1}>
+							<Image style={styles.smallicon} source={require("./assets/customericon.png")} />
+						</View>
+					</TouchableOpacity>
+				  )}
+				/>
+			  )}
+		</View>
+	);
+};
+
+const DMCListScreen = ({ navigation }) => {
+	
+	{/*Following code is required to fetch from json file*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://api.jsonbin.io/b/5f8c713a7243cd7e8250b4ec/2')
+      .then((response) => response.json())
+      .then((json) => setData(json.deliverymencompany))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
+		<View style={styles.bgcolor}>
+				
+				{isLoading ? <ActivityIndicator/> : (
+				<FlatList
+				  data={data}
+				  keyExtractor={({ dmcid }, index) => dmcid}
+				  renderItem={({ item }) => (
+					<TouchableOpacity style={styles.listview} onPress={() => navigation.navigate("OrderDetails")}>
+						<View flex={3}>
+							<Text numberOfLines={2}style={styles.listfont}>DMC ID: {item.dmcid}{"\n"}DMC Name: {item.dmcname}</Text>
+						</View>
+						<View style={styles.listiconright} flex={1}>
+							<Image style={styles.smallicon} source={require("./assets/dmcicon.png")} />
+						</View>
+					</TouchableOpacity>
+				  )}
+				/>
+			  )}
+		</View>
+	);
+};
+
+const DMListScreen = ({ navigation }) => {
+	
+	{/*Following code is required to fetch from json file*/}
+	
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+	
+	useEffect(() => {
+    fetch('https://api.jsonbin.io/b/5f8c81a17243cd7e8250b9a0/6')
+      .then((response) => response.json())
+      .then((json) => setData(json.deliveryman))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+	}, []);
+	
+	
+	return (
+		<View style={styles.bgcolor}>
+				
+				{isLoading ? <ActivityIndicator/> : (
+				<FlatList
+				  data={data}
+				  keyExtractor={({ dmid }, index) => dmid}
+				  renderItem={({ item }) => (
+					<TouchableOpacity style={styles.listview} onPress={() => navigation.navigate("OrderDetails")}>
+						<View flex={3}>
+							<Text numberOfLines={2}style={styles.listfont}>DM ID: {item.dmid}{"\n"}DM Name: {item.dmname}</Text>
+						</View>
+						<View style={styles.listiconright} flex={1}>
+							<Image style={styles.smallicon} source={require("./assets/dmicon.png")} />
 						</View>
 					</TouchableOpacity>
 				  )}
